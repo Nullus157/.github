@@ -1,0 +1,13 @@
+jobs:
+  docsrs:
+    name: cargo +nightly doc --cfg docsrs
+    uses: workflows/cargo.yml
+    with:
+      toolchain: nightly
+      command: doc
+      args: --no-deps --workspace --all-features --locked
+    env:
+      RUSTDOCFLAGS: --cfg=docsrs -Dwarnings
+
+on:
+  workflow_call:

@@ -1,0 +1,48 @@
+jobs:
+  test:
+    uses: workflows/test.yml
+    with:
+      toolchain: nightly
+  fmt:
+    uses: workflows/fmt.yml
+    with:
+      toolchain: nightly
+  clippy:
+    uses: workflows/clippy.yml
+    with:
+      toolchain: nightly
+  audit:
+    uses: workflows/audit.yml
+  updates:
+    uses: workflows/updates.yml
+  minimal-versions:
+    uses: workflows/minimal-versions.yml
+
+  create-issue:
+    name: create issue
+    runs-on: ubuntu-latest
+    if: failure()
+    needs: [test, fmt, clippy, audit]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: JasonEtco/create-an-issue@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REPO: ${{ github.repository }}
+        RUN: ${{ github.run_id }}
+      with:
+        update_existing: true
+        filename: nightly-issue.md
+
+  close-issue:
+    name: close issue
+    runs-on: ubuntu-latest
+    needs: [test, fmt, clippy, audit]
+    steps:
+    - uses: lee-dohm/close-matching-issues@v2
+      with:
+        query: 'is:open label:nightly'
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+on:
+  workflow_call:

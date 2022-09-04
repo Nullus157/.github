@@ -1,0 +1,15 @@
+jobs:
+  fmt:
+    uses: workflows/cargo.yml
+    with:
+      toolchain: ${{ inputs.toolchain }}
+      components: rustfmt
+      command: fmt
+      args: -- --check
+
+on:
+  workflow_call:
+    inputs:
+      toolchain:
+        default: stable
+        type: string

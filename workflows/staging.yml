@@ -1,0 +1,12 @@
+jobs:
+  platforms:
+    uses: workflows/platforms.yml
+  check-features:
+    uses: workflows/features.yml
+  updates:
+    uses: workflows/updates.yml
+  minimal-versions:
+    uses: workflows/minimal-versions.yml
+
+on:
+  workflow_call:

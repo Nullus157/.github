@@ -1,0 +1,25 @@
+jobs:
+  check-features:
+    name: cargo hack check --feature-powerset
+    runs-on: ubuntu-latest
+    env:
+      RUSTFLAGS: -Dwarnings
+    steps:
+    - uses: actions/checkout@v2
+    - uses: hecrj/setup-rust-action@v1
+    - uses: taiki-e/install-action@cargo-hack
+    - uses: actions-rs/cargo@v1
+      with:
+        command: hack
+        args:
+          check
+          --workspace
+          --feature-powerset
+          --no-dev-deps
+          --skip "${{ inputs.skip }}"
+
+on:
+  workflow_call:
+    skip:
+      default: ''
+      type: string

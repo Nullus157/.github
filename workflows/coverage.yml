@@ -1,0 +1,16 @@
+env:
+  RUST_BACKTRACE: 1
+
+jobs:
+  codecov:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: hecrj/setup-rust-action@v1
+    - uses: actions-rs/tarpaulin@v0.1
+      with:
+        args: --locked --all-features
+    - uses: codecov/codecov-action@v1
+
+on:
+  workflow_call:

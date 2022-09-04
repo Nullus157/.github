@@ -1,0 +1,12 @@
+jobs:
+  test:
+    uses: workflows/test.yml
+  fmt:
+    uses: workflows/fmt.yml
+  clippy:
+    uses: workflows/clippy.yml
+  audit:
+    uses: workflows/audit.yml
+
+on:
+  workflow_call:
