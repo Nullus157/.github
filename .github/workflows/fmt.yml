@@ -1,6 +1,6 @@
 jobs:
   fmt:
-    uses: ./workflows/cargo.yml
+    uses: ./.github/workflows/cargo.yml
     with:
       toolchain: ${{ inputs.toolchain }}
       components: rustfmt

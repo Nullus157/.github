@@ -1,12 +1,12 @@
 jobs:
   test:
-    uses: ./workflows/test.yml
+    uses: ./.github/workflows/test.yml
   fmt:
-    uses: ./workflows/fmt.yml
+    uses: ./.github/workflows/fmt.yml
   clippy:
-    uses: ./workflows/clippy.yml
+    uses: ./.github/workflows/clippy.yml
   audit:
-    uses: ./workflows/audit.yml
+    uses: ./.github/workflows/audit.yml
 
 on:
   workflow_call:

@@ -1,12 +1,12 @@
 jobs:
   platforms:
-    uses: ./workflows/platforms.yml
+    uses: ./.github/workflows/platforms.yml
   check-features:
-    uses: ./workflows/features.yml
+    uses: ./.github/workflows/features.yml
   updates:
-    uses: ./workflows/updates.yml
+    uses: ./.github/workflows/updates.yml
   minimal-versions:
-    uses: ./workflows/minimal-versions.yml
+    uses: ./.github/workflows/minimal-versions.yml
 
 on:
   workflow_call:
