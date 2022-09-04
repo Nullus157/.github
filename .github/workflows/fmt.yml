@@ -1,11 +1,18 @@
 jobs:
   fmt:
-    uses: ./.github/workflows/cargo.yml
-    with:
-      toolchain: ${{ inputs.toolchain }}
-      components: rustfmt
-      command: fmt
-      args: -- --check
+    name: cargo +${{ inputs.toolchain }} fmt
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: hecrj/setup-rust-action@v1
+      with:
+        rust-version: ${{ inputs.toolchain }}
+        components: rustfmt
+    - uses: actions-rs/cargo@v1
+      with:
+        toolchain: ${{ inputs.toolchain }}
+        command: fmt
+        args: -- --check
 
 on:
   workflow_call:

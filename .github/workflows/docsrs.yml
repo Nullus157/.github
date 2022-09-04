@@ -1,11 +1,17 @@
 jobs:
   docsrs:
     name: cargo +nightly doc --cfg docsrs
-    uses: ./.github/workflows/cargo.yml
-    with:
-      toolchain: nightly
-      command: doc
-      args: --no-deps --workspace --all-features --locked
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: hecrj/setup-rust-action@v1
+      with:
+        rust-version: nightly
+    - uses: actions-rs/cargo@v1
+      with:
+        toolchain: nightly
+        command: doc
+        args: --no-deps --workspace --all-features --locked
     env:
       RUSTDOCFLAGS: --cfg=docsrs -Dwarnings
 

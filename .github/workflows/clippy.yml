@@ -1,11 +1,18 @@
 jobs:
   clippy:
-    uses: ./.github/workflows/cargo.yml
-    with:
-      toolchain: ${{ inputs.toolchain }}
-      components: clippy
-      command: clippy
-      args: --workspace --all-targets --all-features --locked -- -D warnings
+    name: cargo +${{ inputs.toolchain }} clippy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: hecrj/setup-rust-action@v1
+      with:
+        rust-version: ${{ inputs.toolchain }}
+        components: clippy
+    - uses: actions-rs/cargo@v1
+      with:
+        toolchain: ${{ inputs.toolchain }}
+        command: clippy
+        args: --workspace --all-targets --all-features --locked -- -D warnings
 
 on:
   workflow_call:
