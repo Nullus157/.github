@@ -1,6 +1,6 @@
 jobs:
   clippy:
-    uses: workflows/cargo.yml
+    uses: ./workflows/cargo.yml
     with:
       toolchain: ${{ inputs.toolchain }}
       components: clippy

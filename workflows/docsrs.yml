@@ -1,7 +1,7 @@
 jobs:
   docsrs:
     name: cargo +nightly doc --cfg docsrs
-    uses: workflows/cargo.yml
+    uses: ./workflows/cargo.yml
     with:
       toolchain: nightly
       command: doc

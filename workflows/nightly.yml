@@ -1,22 +1,22 @@
 jobs:
   test:
-    uses: workflows/test.yml
+    uses: ./workflows/test.yml
     with:
       toolchain: nightly
   fmt:
-    uses: workflows/fmt.yml
+    uses: ./workflows/fmt.yml
     with:
       toolchain: nightly
   clippy:
-    uses: workflows/clippy.yml
+    uses: ./workflows/clippy.yml
     with:
       toolchain: nightly
   audit:
-    uses: workflows/audit.yml
+    uses: ./workflows/audit.yml
   updates:
-    uses: workflows/updates.yml
+    uses: ./workflows/updates.yml
   minimal-versions:
-    uses: workflows/minimal-versions.yml
+    uses: ./workflows/minimal-versions.yml
 
   create-issue:
     name: create issue
