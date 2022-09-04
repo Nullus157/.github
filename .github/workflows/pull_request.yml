@@ -7,6 +7,8 @@ jobs:
     uses: ./.github/workflows/clippy.yml
   audit:
     uses: ./.github/workflows/audit.yml
+  coverage:
+    uses: ./.github/workflows/coverage.yml
 
 on:
   workflow_call:
