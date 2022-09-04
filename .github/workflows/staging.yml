@@ -3,6 +3,8 @@ jobs:
     uses: ./.github/workflows/platforms.yml
   check-features:
     uses: ./.github/workflows/features.yml
+    with:
+      skip: ${{ inputs.skip-features }}
   updates:
     uses: ./.github/workflows/updates.yml
   minimal-versions:
@@ -10,3 +12,7 @@ jobs:
 
 on:
   workflow_call:
+    inputs:
+      skip-features:
+        default: ''
+        type: string
