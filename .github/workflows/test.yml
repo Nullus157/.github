@@ -4,7 +4,7 @@ env:
 jobs:
   test:
     name: cargo +${{ inputs.toolchain }} test ${{ inputs.args }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runs-on }}
     steps:
     - uses: actions/checkout@v2
     - uses: hecrj/setup-rust-action@v1
@@ -25,6 +25,9 @@ on:
         type: string
       args:
         required: false
+        type: string
+      runs-on:
+        default: ubuntu-latest
         type: string
       targets:
         required: false
