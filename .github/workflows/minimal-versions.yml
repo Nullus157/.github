@@ -5,7 +5,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: hecrj/setup-rust-action@v1
-    - uses: taiki-e/install-action@cargo-minimal-versions
+      with:
+        rust-version: nightly
+    - uses: hecrj/setup-rust-action@v1
+    - uses: taiki-e/install-action@v1
+      with:
+        tool: cargo-hack,cargo-minimal-versions
     - uses: actions-rs/cargo@v1
       with:
         command: minimal-versions

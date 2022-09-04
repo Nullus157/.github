@@ -10,12 +10,10 @@ jobs:
     - uses: hecrj/setup-rust-action@v1
       with:
         rust-version: ${{ inputs.toolchain }}
-        targets: ${{ inputs.targets }}
     - uses: actions-rs/cargo@v1
       with:
         toolchain: ${{ inputs.toolchain }}
         command: test
-        args: ${{ inputs.args }}
         args: --workspace --locked --all-features ${{ inputs.args }}
 
 on:
@@ -25,8 +23,5 @@ on:
         default: stable
         type: string
       args:
-        required: false
-        type: string
-      targets:
         required: false
         type: string

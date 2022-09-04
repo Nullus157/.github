@@ -8,11 +8,20 @@ jobs:
         - { os: ubuntu-latest, target: x86_64-unknown-linux-gnu }
         - { os: windows-latest, target: i686-pc-windows-msvc }
         - { os: windows-latest, target: x86_64-pc-windows-msvc }
+      fail-fast: false
     runs-on: ${{ matrix.platform.os }}
-    uses: ./.github/workflows/test.yml
-    with:
-      targets: ${{ matrix.platform.target }}
-      args: --target ${{ matrix.platform.target }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: hecrj/setup-rust-action@v1
+      with:
+        rust-version: stable
+        targets: ${{ matrix.platform.target }}
+    - run: sudo apt install -y gcc-multilib
+      if: ${{ matrix.platform.target == 'i686-unknown-linux-gnu' }}
+    - uses: actions-rs/cargo@v1
+      with:
+        command: test
+        args: --workspace --locked --all-features --target ${{ matrix.platform.target }}
 
 on:
   workflow_call:
