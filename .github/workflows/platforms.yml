@@ -8,6 +8,7 @@ jobs:
         - { os: ubuntu-latest, target: x86_64-unknown-linux-gnu }
         - { os: windows-latest, target: i686-pc-windows-msvc }
         - { os: windows-latest, target: x86_64-pc-windows-msvc }
+      fail-fast: false
     uses: ./.github/workflows/test.yml
     with:
       runs-on: ${{ matrix.platform.os }}
