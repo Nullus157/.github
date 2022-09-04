@@ -20,6 +20,7 @@ jobs:
 
 on:
   workflow_call:
-    skip:
-      default: ''
-      type: string
+    inputs:
+      skip:
+        default: ''
+        type: string
