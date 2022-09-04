@@ -3,10 +3,18 @@ jobs:
     uses: ./.github/workflows/test.yml
   fmt:
     uses: ./.github/workflows/fmt.yml
+    with:
+      toolchain: ${{ inputs.fmt-toolchain }}
   clippy:
     uses: ./.github/workflows/clippy.yml
   audit:
     uses: ./.github/workflows/audit.yml
+  coverage:
+    uses: ./.github/workflows/coverage.yml
 
 on:
   workflow_call:
+    inputs:
+      fmt-toolchain:
+        default: stable
+        type: string
