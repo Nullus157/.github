@@ -1,4 +1,6 @@
 jobs:
+  pull_request:
+    uses: ./.github/workflows/pull_request.yml
   platforms:
     uses: ./.github/workflows/platforms.yml
   check-features:
