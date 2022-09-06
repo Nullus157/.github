@@ -17,8 +17,6 @@ jobs:
     uses: ./.github/workflows/updates.yml
   minimal-versions:
     uses: ./.github/workflows/minimal-versions.yml
-  coverage:
-    uses: ./.github/workflows/coverage.yml
 
   create-issue:
     name: create issue
