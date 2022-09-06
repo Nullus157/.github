@@ -1,0 +1,20 @@
+env:
+  RUST_BACKTRACE: 1
+
+jobs:
+  check:
+    name: cargo deny check ${{ matrix.check }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        check: [advisories, bans, licenses, sources]
+      fail-fast: false
+    steps:
+    - uses: actions/checkout@v3
+    - uses: EmbarkStudios/cargo-deny-action@v1
+      with:
+        arguments: --workspace --all-features --locked
+        command: check ${{ matrix.check }}
+
+on:
+  workflow_call:

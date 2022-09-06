@@ -11,8 +11,8 @@ jobs:
     uses: ./.github/workflows/clippy.yml
     with:
       toolchain: nightly
-  audit:
-    uses: ./.github/workflows/audit.yml
+  deny:
+    uses: ./.github/workflows/deny.yml
   updates:
     uses: ./.github/workflows/updates.yml
   minimal-versions:
@@ -22,7 +22,7 @@ jobs:
     name: create issue
     runs-on: ubuntu-latest
     if: failure()
-    needs: [test, fmt, clippy, audit]
+    needs: [test, fmt, clippy, deny]
     steps:
     - uses: actions/checkout@v2
       with:
@@ -39,7 +39,7 @@ jobs:
   close-issue:
     name: close issue
     runs-on: ubuntu-latest
-    needs: [test, fmt, clippy, audit]
+    needs: [test, fmt, clippy, deny]
     steps:
     - uses: lee-dohm/close-matching-issues@v2
       with:
