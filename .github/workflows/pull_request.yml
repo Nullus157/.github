@@ -7,8 +7,8 @@ jobs:
       toolchain: ${{ inputs.fmt-toolchain }}
   clippy:
     uses: ./.github/workflows/clippy.yml
-  audit:
-    uses: ./.github/workflows/audit.yml
+  deny:
+    uses: ./.github/workflows/deny.yml
   coverage:
     uses: ./.github/workflows/coverage.yml
 
