@@ -27,6 +27,8 @@ jobs:
     needs: [test, fmt, clippy, audit]
     steps:
     - uses: actions/checkout@v2
+      with:
+        repository: 'Nullus157/.github'
     - uses: JasonEtco/create-an-issue@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
