@@ -11,8 +11,13 @@ jobs:
     - uses: actions-rs/cargo@v1
       with:
         toolchain: ${{ inputs.toolchain }}
-        command: clippy
-        args: --workspace --all-targets --all-features --locked -- -D warnings
+        command: install
+        args: --git https://github.com/soramitsu/iroha2-cargo_lints --rev 2f8cad22
+    - uses: actions-rs/cargo@v1
+      with:
+        toolchain: ${{ inputs.toolchain }}
+        command: lints
+        args: clippy --workspace --all-targets --all-features --locked -- -D warnings
 
 on:
   workflow_call:
