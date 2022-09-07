@@ -11,6 +11,8 @@ jobs:
     uses: ./.github/workflows/minimal-versions.yml
   coverage:
     uses: ./.github/workflows/coverage.yml
+  deny:
+    uses: ./.github/workflows/deny.yml
 
 on:
   workflow_call:
