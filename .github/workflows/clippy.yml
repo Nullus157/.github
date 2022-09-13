@@ -4,15 +4,41 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      with:
+        repository: 'Nullus157/.github'
+        path: '.nullus157.github'
     - uses: hecrj/setup-rust-action@v1
       with:
         rust-version: ${{ inputs.toolchain }}
         components: clippy
+    - uses: taiki-e/install-action@v1
+      with:
+        tool: aq-cli
     - uses: actions-rs/cargo@v1
       with:
         toolchain: ${{ inputs.toolchain }}
         command: install
         args: --git https://github.com/soramitsu/iroha2-cargo_lints --rev 2f8cad22
+    - run: |
+        if [[ -f lints.toml ]]
+        then
+          (
+            aq -i toml -o json <lints.toml
+            aq -i toml -o json <.nullus157.github/.github/lints.toml
+          ) | aq -i json -o toml -n '
+            [inputs | to_entries | .[]]
+              | group_by(.key)
+              | .[]
+              | {
+                (.[0].key): ([.[].value] | flatten | sort | unique)
+              }
+          ' > lints.toml.tmp
+          mv lints.toml.tmp lints.toml
+        else
+          cp .nullus157.github/.github/lints.toml lints.toml
+        fi
+        cat lints.toml
     - uses: actions-rs/cargo@v1
       with:
         toolchain: ${{ inputs.toolchain }}
