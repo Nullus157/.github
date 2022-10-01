@@ -1,1 +1,1 @@
-status = ["success"]
+status = ["success-staging", "success-pull_request", "success-nightly"]
