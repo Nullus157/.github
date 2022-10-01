@@ -11,6 +11,8 @@ jobs:
     uses: ./.github/workflows/clippy.yml
     with:
       toolchain: nightly
+  docsrs:
+    uses: ./.github/workflows/docsrs.yml
   deny:
     uses: ./.github/workflows/deny.yml
   updates:

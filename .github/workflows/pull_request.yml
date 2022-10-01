@@ -9,6 +9,8 @@ jobs:
     uses: ./.github/workflows/clippy.yml
   coverage:
     uses: ./.github/workflows/coverage.yml
+  docsrs:
+    uses: ./.github/workflows/docsrs.yml
 
 on:
   workflow_call:
