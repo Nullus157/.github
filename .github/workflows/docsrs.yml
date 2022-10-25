@@ -3,7 +3,7 @@ jobs:
     name: cargo +nightly doc --cfg docsrs
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: hecrj/setup-rust-action@v1
       with:
         rust-version: nightly
