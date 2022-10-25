@@ -8,16 +8,12 @@ jobs:
       with:
         rust-version: ${{ inputs.toolchain }}
         components: clippy
-    - uses: actions-rs/cargo@v1
-      with:
-        toolchain: ${{ inputs.toolchain }}
-        command: install
-        args: --git https://github.com/soramitsu/iroha2-cargo_lints --rev 2f8cad22
-    - uses: actions-rs/cargo@v1
-      with:
-        toolchain: ${{ inputs.toolchain }}
-        command: lints
-        args: clippy --workspace --all-targets --all-features --locked -- -D warnings
+    - run:
+        cargo install
+          --git https://github.com/soramitsu/iroha2-cargo_lints --rev 2f8cad22
+    - run:
+        cargo lints clippy
+          --workspace --all-targets --all-features --locked -- -D warnings
 
 on:
   workflow_call:

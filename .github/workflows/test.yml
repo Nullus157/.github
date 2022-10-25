@@ -10,11 +10,7 @@ jobs:
     - uses: hecrj/setup-rust-action@v1
       with:
         rust-version: ${{ inputs.toolchain }}
-    - uses: actions-rs/cargo@v1
-      with:
-        toolchain: ${{ inputs.toolchain }}
-        command: test
-        args: --workspace --locked --all-features ${{ inputs.args }}
+    - run: cargo test --workspace --locked --all-features ${{ inputs.args }}
 
 on:
   workflow_call:
