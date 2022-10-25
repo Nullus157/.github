@@ -10,7 +10,7 @@ jobs:
     - uses: actions-rs/tarpaulin@v0.1
       with:
         args: --locked --all-features
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@v3
 
 on:
   workflow_call:
