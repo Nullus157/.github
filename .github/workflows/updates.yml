@@ -5,14 +5,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: hecrj/setup-rust-action@v1
-    - uses: actions-rs/cargo@v1
-      with:
-        command: update
-        args: --aggressive
-    - uses: actions-rs/cargo@v1
-      with:
-        command: test
-        args: --workspace --locked --all-features
+    - run: cargo update --aggressive
+    - run: cargo test --workspace --locked --all-features
 
 on:
   workflow_call:

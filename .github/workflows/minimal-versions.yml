@@ -5,16 +5,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: hecrj/setup-rust-action@v1
-      with:
-        rust-version: nightly
-    - uses: hecrj/setup-rust-action@v1
+    - run: rustup toolchain install nightly
     - uses: taiki-e/install-action@v1
       with:
         tool: cargo-hack,cargo-minimal-versions
-    - uses: actions-rs/cargo@v1
-      with:
-        command: minimal-versions
-        args: check --workspace --all-features
+    - run: cargo minimal-versions check --workspace --all-features
 
 on:
   workflow_call:

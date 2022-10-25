@@ -18,10 +18,10 @@ jobs:
         targets: ${{ matrix.platform.target }}
     - run: sudo apt install -y gcc-multilib
       if: ${{ matrix.platform.target == 'i686-unknown-linux-gnu' }}
-    - uses: actions-rs/cargo@v1
-      with:
-        command: test
-        args: --workspace --locked --all-features --target ${{ matrix.platform.target }}
+    - run:
+        cargo test
+          --workspace --locked --all-features
+          --target ${{ matrix.platform.target }}
 
 on:
   workflow_call:

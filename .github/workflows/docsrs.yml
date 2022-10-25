@@ -7,11 +7,7 @@ jobs:
     - uses: hecrj/setup-rust-action@v1
       with:
         rust-version: nightly
-    - uses: actions-rs/cargo@v1
-      with:
-        toolchain: nightly
-        command: doc
-        args: --no-deps --workspace --all-features --locked
+    - run: cargo doc --no-deps --workspace --all-features --locked
     env:
       RUSTDOCFLAGS: --cfg=docsrs -Dwarnings
 
