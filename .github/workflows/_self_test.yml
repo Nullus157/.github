@@ -12,5 +12,5 @@ jobs:
 on:
   pull_request:
     branches: [main]
-  push:
-    branches: [staging, trying]
+  merge_group:
+    type: [checks_requested]
