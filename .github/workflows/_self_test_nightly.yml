@@ -9,6 +9,6 @@ jobs:
 
 on:
   pull_request:
-    branches: [prīmum]
-  push:
-    branches: [staging, trying]
+    branches: [main]
+  merge_group:
+    type: [checks_requested]
