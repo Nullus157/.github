@@ -1,7 +1,7 @@
 jobs:
   staging:
     uses: ./.github/workflows/staging.yml
-  success-staging:
+  success:
     needs: [staging]
     runs-on: ubuntu-latest
     steps:

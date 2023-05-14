@@ -1,7 +1,7 @@
 jobs:
   pull_request:
     uses: ./.github/workflows/pull_request.yml
-  success-pull_request:
+  success:
     needs: [pull_request]
     runs-on: ubuntu-latest
     steps:
