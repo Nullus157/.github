@@ -1,8 +1,10 @@
 jobs:
+  pull_request:
+    uses: ./.github/workflows/pull_request.yml
   staging:
     uses: ./.github/workflows/staging.yml
-  success-staging:
-    needs: [staging]
+  success:
+    needs: [pull_request, staging]
     runs-on: ubuntu-latest
     steps:
     - run: true
