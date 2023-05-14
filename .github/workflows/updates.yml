@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: hecrj/setup-rust-action@v1
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
     - run: cargo update --aggressive
     - run: cargo test --workspace --locked --all-features
 

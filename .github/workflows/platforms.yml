@@ -12,10 +12,9 @@ jobs:
     runs-on: ${{ matrix.platform.os }}
     steps:
     - uses: actions/checkout@v3
-    - uses: hecrj/setup-rust-action@v1
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
-        rust-version: stable
-        targets: ${{ matrix.platform.target }}
+        target: ${{ matrix.platform.target }}
     - run: sudo apt install -y gcc-multilib
       if: ${{ matrix.platform.target == 'i686-unknown-linux-gnu' }}
     - run:
