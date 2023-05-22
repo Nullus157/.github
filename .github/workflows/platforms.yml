@@ -15,7 +15,7 @@ jobs:
     - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         target: ${{ matrix.platform.target }}
-    - run: sudo apt install -y gcc-multilib
+    - run: sudo apt update && sudo apt install -y gcc-multilib
       if: ${{ matrix.platform.target == 'i686-unknown-linux-gnu' }}
     - run:
         cargo test
