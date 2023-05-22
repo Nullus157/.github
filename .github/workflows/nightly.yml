@@ -24,7 +24,7 @@ jobs:
     name: create issue
     runs-on: ubuntu-latest
     if: failure()
-    needs: [test, fmt, clippy, deny]
+    needs: [test, fmt, clippy, deny, updates, minimal-versions]
     steps:
     - uses: actions/checkout@v3
       with:
@@ -41,7 +41,7 @@ jobs:
   close-issue:
     name: close issue
     runs-on: ubuntu-latest
-    needs: [test, fmt, clippy, deny]
+    needs: [test, fmt, clippy, deny, updates, minimal-versions]
     steps:
     - uses: lee-dohm/close-matching-issues@v2
       with:
