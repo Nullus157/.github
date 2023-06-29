@@ -19,6 +19,10 @@ jobs:
     uses: ./.github/workflows/updates.yml
   minimal-versions:
     uses: ./.github/workflows/minimal-versions.yml
+  minimal-versions-nightly:
+    uses: ./.github/workflows/minimal-versions.yml
+    with:
+      toolchain: nightly
 
   create-issue:
     name: create issue
