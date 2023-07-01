@@ -7,6 +7,7 @@ jobs:
     - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         toolchain: ${{ inputs.toolchain }}
+        rustflags: ${{ inputs.rustflags }}
         components: clippy
     - run:
         cargo clippy
@@ -17,4 +18,7 @@ on:
     inputs:
       toolchain:
         default: stable
+        type: string
+      rustflags:
+        required: false
         type: string

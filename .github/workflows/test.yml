@@ -10,6 +10,9 @@ jobs:
     - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         toolchain: ${{ inputs.toolchain }}
+        rustflags: ${{ inputs.rustflags }}
+    - run: cargo update
+      if: ${{ inputs.update }}
     - run: cargo test --workspace --locked --all-features ${{ inputs.args }}
 
 on:
@@ -18,6 +21,12 @@ on:
       toolchain:
         default: stable
         type: string
+      rustflags:
+        required: false
+        type: string
       args:
         required: false
         type: string
+      update:
+        default: false
+        type: boolean
