@@ -13,7 +13,7 @@ jobs:
     - run:
         cargo deny
           --workspace --all-features --locked
-          check
+          check --deny warnings --allow duplicate
 
 on:
   workflow_call:
