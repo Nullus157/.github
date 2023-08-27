@@ -7,10 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: EmbarkStudios/cargo-deny-action@v1
+    - uses: taiki-e/install-action@v2
       with:
-        arguments: --workspace --all-features --locked
-        command: check
+        tool: cargo-deny
+    - run:
+        cargo deny
+          --workspace --all-features --locked
+          check
 
 on:
   workflow_call:
