@@ -33,7 +33,7 @@ jobs:
     if: failure()
     needs: [test, fmt, clippy, deny, updates, minimal-versions]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: 'Nullus157/.github'
     - uses: JasonEtco/create-an-issue@v2
