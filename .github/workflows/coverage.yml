@@ -11,7 +11,7 @@ jobs:
       with:
         tool: cargo-tarpaulin
     - run: cargo tarpaulin --out Xml --locked --all-features
-    - uses: codecov/codecov-action@v3
+    - uses: codecov/codecov-action@v4
 
 on:
   workflow_call:
