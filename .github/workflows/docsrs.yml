@@ -7,9 +7,10 @@ jobs:
     - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         toolchain: nightly
+        rustflags: -Zallow-features=
     - run: cargo doc --no-deps --workspace --all-features --locked
-    env:
-      RUSTDOCFLAGS: --cfg=docsrs -Dwarnings
+      env:
+        RUSTDOCFLAGS: --cfg=docsrs -Dwarnings
 
 on:
   workflow_call:

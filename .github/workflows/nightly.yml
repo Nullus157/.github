@@ -1,11 +1,9 @@
-env:
-  RUSTFLAGS: -Zallow-features=
-
 jobs:
   test:
     uses: ./.github/workflows/test.yml
     with:
       toolchain: nightly
+      rustflags: -Zallow-features=
   fmt:
     uses: ./.github/workflows/fmt.yml
     with:
@@ -14,24 +12,42 @@ jobs:
     uses: ./.github/workflows/clippy.yml
     with:
       toolchain: nightly
+      rustflags: -Zallow-features=
   docsrs:
     uses: ./.github/workflows/docsrs.yml
   deny:
     uses: ./.github/workflows/deny.yml
   updates:
-    uses: ./.github/workflows/updates.yml
+    uses: ./.github/workflows/test.yml
+    with:
+      update: true
+  updates-nightly:
+    uses: ./.github/workflows/test.yml
+    with:
+      update: true
+      toolchain: nightly
+      rustflags: -Zallow-features=
   minimal-versions:
     uses: ./.github/workflows/minimal-versions.yml
   minimal-versions-nightly:
     uses: ./.github/workflows/minimal-versions.yml
     with:
       toolchain: nightly
+      rustflags: -Zallow-features=
 
   create-issue:
     name: create issue
     runs-on: ubuntu-latest
     if: failure()
-    needs: [test, fmt, clippy, deny, updates, minimal-versions]
+    needs:
+    - test
+    - fmt
+    - clippy
+    - deny
+    - updates
+    - updates-nightly
+    - minimal-versions
+    - minimal-versions-nightly
     steps:
     - uses: actions/checkout@v4
       with:
@@ -48,7 +64,15 @@ jobs:
   close-issue:
     name: close issue
     runs-on: ubuntu-latest
-    needs: [test, fmt, clippy, deny, updates, minimal-versions]
+    needs:
+    - test
+    - fmt
+    - clippy
+    - deny
+    - updates
+    - updates-nightly
+    - minimal-versions
+    - minimal-versions-nightly
     steps:
     - uses: lee-dohm/close-matching-issues@v2
       with:

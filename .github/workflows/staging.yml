@@ -6,11 +6,11 @@ jobs:
     with:
       skip: ${{ inputs.skip-features }}
   updates:
-    uses: ./.github/workflows/updates.yml
+    uses: ./.github/workflows/test.yml
+    with:
+      update: true
   minimal-versions:
     uses: ./.github/workflows/minimal-versions.yml
-  coverage:
-    uses: ./.github/workflows/coverage.yml
   deny:
     uses: ./.github/workflows/deny.yml
 
