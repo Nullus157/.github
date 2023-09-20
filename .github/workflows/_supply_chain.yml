@@ -7,9 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions-rust-lang/setup-rust-toolchain@v1
-      with:
-        toolchain: ${{ inputs.toolchain }}
     - uses: taiki-e/install-action@v2
       with:
         tool: cargo-vet
@@ -37,6 +34,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: JasonEtco/create-an-issue@v2
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         RUN: ${{ github.run_id }}
       with:
         update_existing: true
@@ -52,6 +50,7 @@ jobs:
     - uses: lee-dohm/close-matching-issues@v2
       with:
         query: 'is:open label:supply-chain/aggregate'
+        token: ${{ secrets.GITHUB_TOKEN }}
 
 on:
   workflow_dispatch:
