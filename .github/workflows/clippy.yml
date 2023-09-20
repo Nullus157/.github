@@ -1,6 +1,6 @@
 jobs:
   clippy:
-    name: cargo +${{ inputs.toolchain }} lints clippy
+    name: cargo +${{ inputs.toolchain }} clippy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -9,10 +9,7 @@ jobs:
         toolchain: ${{ inputs.toolchain }}
         components: clippy
     - run:
-        cargo install
-          --git https://github.com/soramitsu/iroha2-cargo_lints --rev 2f8cad22
-    - run:
-        cargo lints clippy
+        cargo clippy
           --workspace --all-targets --all-features --locked -- -D warnings
 
 on:
