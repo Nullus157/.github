@@ -1,6 +1,6 @@
 jobs:
   minimal-versions:
-    name: cargo minimal-versions check --workspace
+    name: cargo +${{ inputs.toolchain }} minimal-versions check --workspace
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
