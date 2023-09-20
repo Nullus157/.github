@@ -1,0 +1,63 @@
+jobs:
+  aggregate:
+    permissions:
+      contents: write
+      pull-requests: write
+    name: cargo vet aggregate
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        toolchain: ${{ inputs.toolchain }}
+    - uses: taiki-e/install-action@v2
+      with:
+        tool: cargo-vet
+    - run: cargo vet aggregate --output-file third-party-audits.toml third-party-sources.list
+      working-directory: supply-chain
+    - run: cargo vet aggregate --output-file first-party-audits.toml first-party-sources.list
+      working-directory: supply-chain
+    - uses: peter-evans/create-pull-request@v5
+      with:
+        author: cargo-vet[bot] <noreply@github.com>
+        commit-message: Aggregate new audits
+        title: Aggregate new audits
+        body: ""
+        branch: supply-chain/aggregate
+        delete-branch: true
+
+  create-issue:
+    permissions:
+      issues: write
+    name: create issue
+    runs-on: ubuntu-latest
+    if: failure()
+    needs: [aggregate]
+    steps:
+    - uses: actions/checkout@v3
+    - uses: JasonEtco/create-an-issue@v2
+      env:
+        RUN: ${{ github.run_id }}
+      with:
+        update_existing: true
+        filename: aggregate-issue.md
+
+  close-issue:
+    permissions:
+      issues: write
+    name: close issue
+    runs-on: ubuntu-latest
+    needs: [aggregate]
+    steps:
+    - uses: lee-dohm/close-matching-issues@v2
+      with:
+        query: 'is:open label:supply-chain/aggregate'
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 0 * * 3'
+  push:
+    branches: [main]
+    paths:
+    - supply-chain/*-sources.list
