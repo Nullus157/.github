@@ -1,0 +1,35 @@
+jobs:
+  vet-status:
+    name: cargo vet status
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+      if: hashFiles('supply-chain/config.toml') != ''
+      with:
+        repository: 'Nullus157/.github'
+        path: nullus.github
+    - uses: taiki-e/install-action@v2
+      if: hashFiles('supply-chain/config.toml') != ''
+      with:
+        tool: cargo-vet
+    - uses: taiki-e/cache-cargo-install-action@v1
+      if: hashFiles('supply-chain/config.toml') != ''
+      with:
+        tool: toml2json
+    - id: vet_status
+      uses: mathiasvr/command-output@v2.0.0
+      if: hashFiles('supply-chain/config.toml') != ''
+      with:
+        run: ./nullus.github/vet-status
+    - uses: JasonEtco/create-an-issue@v2
+      if: hashFiles('supply-chain/config.toml') != ''
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VET_STATUS: ${{ steps.vet_status.outputs.stdout }}
+      with:
+        update_existing: true
+        filename: nullus.github/vet-status.md
+
+on:
+  workflow_call:

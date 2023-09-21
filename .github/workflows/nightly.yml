@@ -34,6 +34,8 @@ jobs:
     with:
       toolchain: nightly
       rustflags: -Zallow-features=
+  vet-status:
+    uses: ./.github/workflows/vet-status.yml
 
   create-issue:
     name: create issue
@@ -48,6 +50,7 @@ jobs:
     - updates-nightly
     - minimal-versions
     - minimal-versions-nightly
+    - vet-status
     steps:
     - uses: actions/checkout@v4
       with:
@@ -73,6 +76,7 @@ jobs:
     - updates-nightly
     - minimal-versions
     - minimal-versions-nightly
+    - vet-status
     steps:
     - uses: lee-dohm/close-matching-issues@v2
       with:
