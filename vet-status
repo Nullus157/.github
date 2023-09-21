@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+tq() {
+  toml2json "supply-chain/$1" | jq -r "$2 | keys | .[]"
+}
+
+local=($(tq audits.toml '.audits'))
+remote=($(tq imports.lock '.audits["first-party"].audits'))
+audited=($( (echo ${local[@]}; echo ${remote[@]}) | sort -u))
+imported=($(tq imports.lock '.audits | del(."first-party") | .[].audits' | sort -u))
+trusted=($(tq audits.toml '.trusted'))
+exempted=($(tq config.toml '.exemptions'))
+
+log() {
+  title=$1
+  shift
+  echo
+  echo "<details><summary>$title: $#</summary>"
+  echo
+  printf ' * %s\n' "$@"
+  echo
+  echo "</details>"
+}
+
+log Audited "${audited[@]}"
+log Imported "${imported[@]}"
+log Trusted "${trusted[@]}"
+log Exempted "${exempted[@]}"
