@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 tq() {
   toml2json "supply-chain/$1" | jq -r "$2 | keys | .[]"
 }
@@ -12,17 +14,20 @@ trusted=($(tq audits.toml '.trusted'))
 exempted=($(tq config.toml '.exemptions'))
 
 log() {
-  title=$1
-  shift
+  emoji=$1
+  title=$2
+  shift 2
   echo
-  echo "<details><summary>$title: $#</summary>"
+  echo "<details><summary><h1>$emoji</h1><h2>$title: $#</h2></summary>"
   echo
-  printf ' * %s\n' "$@"
+  echo '```'
+  printf '%s\n' "$@"
+  echo '```'
   echo
   echo "</details>"
 }
 
-log Audited "${audited[@]}"
-log Imported "${imported[@]}"
-log Trusted "${trusted[@]}"
-log Exempted "${exempted[@]}"
+log 😍 Audited "${audited[@]}"
+log 😄 Imported "${imported[@]}"
+log 🙊 Trusted "${trusted[@]}"
+log 🙈 Exempted "${exempted[@]}"
