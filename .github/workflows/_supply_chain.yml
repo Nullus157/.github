@@ -6,7 +6,7 @@ jobs:
     name: cargo vet aggregate
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: taiki-e/install-action@v2
       with:
         tool: cargo-vet
@@ -31,7 +31,7 @@ jobs:
     if: failure()
     needs: [aggregate]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: JasonEtco/create-an-issue@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
