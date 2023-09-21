@@ -22,6 +22,8 @@ jobs:
         body: ""
         branch: supply-chain/aggregate
         delete-branch: true
+        token: ${{ secrets.MACHINE_USER_PAT }}
+        push-to-fork: Satelles157/nullus.github
 
   create-issue:
     permissions:
