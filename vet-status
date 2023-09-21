@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 tq() {
   toml2json "supply-chain/$1" | jq -r "$2 | keys | .[]"
 }
