@@ -1,0 +1,18 @@
+jobs:
+  vet:
+    name: cargo vet check
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: taiki-e/install-action@v2
+      with:
+        tool: cargo-vet
+    - run: |
+        if [ -f supply-chain/config.toml ]; then
+          cargo vet check --locked
+        else
+          echo skipping check on unconfigured repo
+        fi
+
+on:
+  workflow_call:
