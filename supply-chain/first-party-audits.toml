@@ -7,7 +7,7 @@ notes = "No unsafe related code changed"
 aggregated-from = "https://raw.githubusercontent.com/FerrisCraft/fc5-tool/main/supply-chain/audits.toml"
 
 [[audits.cesu8]]
-who = "Wim Looman <git@nemo157.com>"
+who = "Wim Looman <vet@nemo157.com>"
 criteria = "safe-to-deploy"
 version = "1.1.0"
 notes = """
@@ -17,6 +17,13 @@ while with no issues detected:
 
 https://github.com/emk/cesu8-rs/compare/master...Nemo157:cesu8-rs:fuzz
 """
+aggregated-from = "https://raw.githubusercontent.com/FerrisCraft/fc5-tool/main/supply-chain/audits.toml"
+
+[[audits.fastanvil]]
+who = "Wim Looman <vet@nemo157.com>"
+criteria = "safe-to-deploy"
+version = "0.28.0"
+notes = "One instance of unnecessary but benign unsafe usage, PR submitted to remove it."
 aggregated-from = "https://raw.githubusercontent.com/FerrisCraft/fc5-tool/main/supply-chain/audits.toml"
 
 [[audits.tracing-tree]]
