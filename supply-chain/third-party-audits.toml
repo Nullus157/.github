@@ -11268,6 +11268,12 @@ aggregated-from = [
 [[audits.ittapi]]
 who = "Andrew Brown <andrew.brown@intel.com>"
 criteria = "safe-to-deploy"
+version = "0.3.4"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.ittapi]]
+who = "Andrew Brown <andrew.brown@intel.com>"
+criteria = "safe-to-deploy"
 delta = "0.3.1 -> 0.3.3"
 notes = "I am the author of this crate."
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
@@ -11278,6 +11284,12 @@ criteria = "safe-to-deploy"
 version = "0.3.3"
 notes = "Lots of unsafe code for calling into C FFI functions, looks pretty simple and sound though. No ambient capabilities"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
+
+[[audits.ittapi-sys]]
+who = "Andrew Brown <andrew.brown@intel.com>"
+criteria = "safe-to-deploy"
+version = "0.3.4"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.ittapi-sys]]
 who = "Andrew Brown <andrew.brown@intel.com>"
@@ -12651,6 +12663,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.metal]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.26.0 -> 0.26.0@git:d24f1a4ae92470bf87a0c65ecfe78c9299835505"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.metrics]]
 who = "Jack Grigg <jack@z.cash>"
 criteria = "safe-to-deploy"
@@ -12807,7 +12828,8 @@ aggregated-from = [
 [[audits.minidump-writer]]
 who = "Gabriele Svelto <gsvelto@mozilla.com>"
 criteria = "safe-to-deploy"
-delta = "0.8.1 -> 0.8.1@git:a15bd5cab6a3de251c0c23264be14b977c0af09c"
+delta = "0.8.1 -> 0.8.1@git:491eb330e78e310c32927e5cc3bd2350af1e93f8"
+notes = "All the changes were written by a Mozilla employee (me)"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -13213,6 +13235,15 @@ aggregated-from = [
 who = "Erich Gubler <egubler@mozilla.com"
 criteria = "safe-to-deploy"
 delta = "0.13.0@git:bac2d82a430fbfcf100ee22b7c3bc12f3d593079 -> 0.13.0@git:7a19f3af909202c7eafd36633b5584bfbb353ecb"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.naga]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.13.0@git:cc87b8f9eb30bb55d0735b89d3df3e099e1a6e7c -> 0.13.0@git:df8107b78812cc2b1e3d5de35279cedc1f0da3fb"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -16235,6 +16266,12 @@ delta = "1.6.1 -> 1.7.0"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.rayon]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-deploy"
+delta = "1.7.0 -> 1.8.0"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.rayon]]
 who = "Josh Stone <jistone@redhat.com>"
 criteria = "safe-to-deploy"
 version = "1.5.3"
@@ -16263,6 +16300,12 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 who = "Brandon Pitman <bran@bran.land>"
 criteria = "safe-to-deploy"
 delta = "1.10.2 -> 1.11.0"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.rayon-core]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-deploy"
+delta = "1.11.0 -> 1.12.0"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.rayon-core]]
@@ -19564,6 +19607,16 @@ aggregated-from = [
 ]
 
 [[audits.tokio-stream]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-0"]
+delta = "0.1.11 -> 0.1.14"
+notes = "Reviewed on https://fxrev.dev/907732."
+aggregated-from = [
+    "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.tokio-stream]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-run"
 delta = "0.1.9 -> 0.1.11"
@@ -22783,6 +22836,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.wgpu-core]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:7fea9e934efd8d5dc03b9aa3e06b775c1ac4a23e -> 0.17.0@git:7e0d6c971f900f6a8f01a9de9c41f7894164a82c"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.wgpu-hal]]
 who = "Dzmitry Malyshau <kvark@fastmail.com>"
 criteria = "safe-to-deploy"
@@ -22980,6 +23042,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.wgpu-hal]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:7fea9e934efd8d5dc03b9aa3e06b775c1ac4a23e -> 0.17.0@git:7e0d6c971f900f6a8f01a9de9c41f7894164a82c"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.wgpu-types]]
 who = "Dzmitry Malyshau <kvark@fastmail.com>"
 criteria = "safe-to-deploy"
@@ -23172,6 +23243,15 @@ aggregated-from = [
 who = "Erich Gubler <erichdongubler@gmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.17.0@git:7c6b85756237f77bfe8d6231dfc7a1412ff662b6 -> 0.17.0@git:332cd0325da52675432830870584ec9766679c34"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-types]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:7fea9e934efd8d5dc03b9aa3e06b775c1ac4a23e -> 0.17.0@git:7e0d6c971f900f6a8f01a9de9c41f7894164a82c"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
