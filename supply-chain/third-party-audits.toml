@@ -13341,6 +13341,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.naga]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.13.0@git:df8107b78812cc2b1e3d5de35279cedc1f0da3fb -> 0.13.0@git:6668d0694cc51ee66c71c2ca3a1ab1081956299b"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.named-lock]]
 who = "crosvm"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -13834,6 +13843,12 @@ aggregated-from = [
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-deploy"
 delta = "0.2.15 -> 0.2.16"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.num-traits]]
+who = "Ameer Ghani <inahga@divviup.org>"
+criteria = "safe-to-deploy"
+delta = "0.2.16 -> 0.2.17"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.num-traits]]
@@ -15480,6 +15495,15 @@ aggregated-from = [
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.59 -> 1.0.66"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.proc-macro2]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.66 -> 1.0.69"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -18744,6 +18768,15 @@ aggregated-from = [
 ]
 
 [[audits.syn]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.0.28 -> 2.0.38"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.syn]]
 who = "Brandon Pitman <bran@bran.land>"
 criteria = "safe-to-deploy"
 delta = "1.0.104 -> 2.0.11"
@@ -20186,6 +20219,16 @@ of other miscellaneous updates to APIs all covered in the changelog without,
 business as usual for minor updates in this crate.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.tracing-subscriber]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.3.1 -> 0.3.15"
+notes = "Reviewed on https://fxrev.dev/907708"
+aggregated-from = [
+    "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
 
 [[audits.tracing-subscriber]]
 who = "Jack Grigg <jack@electriccoin.co>"
@@ -22981,6 +23024,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.wgpu-core]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:9a76c483da4891fb7046c579e36d7c54bdb0b251 -> 0.17.0@git:1495e159faf721cbf87a0634157682f454a963fb"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.wgpu-hal]]
 who = "Dzmitry Malyshau <kvark@fastmail.com>"
 criteria = "safe-to-deploy"
@@ -23196,6 +23248,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.wgpu-hal]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:9a76c483da4891fb7046c579e36d7c54bdb0b251 -> 0.17.0@git:1495e159faf721cbf87a0634157682f454a963fb"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.wgpu-types]]
 who = "Dzmitry Malyshau <kvark@fastmail.com>"
 criteria = "safe-to-deploy"
@@ -23406,6 +23467,15 @@ aggregated-from = [
 who = "Nicolas Silva <nical@fastmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.17.0@git:7fea9e934efd8d5dc03b9aa3e06b775c1ac4a23e -> 0.17.0@git:7e0d6c971f900f6a8f01a9de9c41f7894164a82c"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-types]]
+who = "Nicolas Silva <nical@fastmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:9a76c483da4891fb7046c579e36d7c54bdb0b251 -> 0.17.0@git:1495e159faf721cbf87a0634157682f454a963fb"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -24100,10 +24170,28 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.zerocopy]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.0-alpha.1 -> 0.7.8"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.zerocopy-derive]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.2"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.zerocopy-derive]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.2 -> 0.7.8"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -24256,6 +24344,16 @@ user-id = 6743
 start = "2022-05-18"
 end = "2024-07-14"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[trusted.anstyle]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2022-05-18"
+end = "2024-09-28"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
 
 [[trusted.anstyle-parse]]
 criteria = "safe-to-deploy"
