@@ -2308,6 +2308,15 @@ aggregated-from = [
 ]
 
 [[audits.ahash]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.8.3 -> 0.7.7"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.ahash]]
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.8.3 -> 0.8.5"
@@ -4218,6 +4227,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.bytemuck_derive]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.5.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.byteorder]]
 who = "Alyssa Haroldsen <kupiakos@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
@@ -5568,6 +5586,34 @@ delta = "0.6.0 -> 0.6.1"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.crc]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "crypto-safe"]
+delta = "2.1.0 -> 3.0.1"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.crc-catalog]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = "does-not-implement-crypto"
+delta = "1.1.1 -> 2.2.0"
+notes = "This crate exposes a catalog of types that represent read-only versions of algorithms. There is no line of code that actually does something within this crate, but rather information about the algorithms as Rust types-"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.crc-catalog]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.1.1 -> 2.2.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.crc32fast]]
@@ -8165,6 +8211,16 @@ aggregated-from = [
 ]
 
 [[audits.fastrand]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+delta = "2.0.0 -> 2.0.1"
+notes = """
+This update had a few doc updates but no otherwise-substantial source code
+updates.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.fastrand]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "1.9.0"
@@ -9945,6 +10001,24 @@ criteria = "safe-to-deploy"
 version = "0.9.0"
 notes = "No unsafe usage or ambient capabilities"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
+
+[[audits.gpt_disk_io]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.gpt_disk_types]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
 
 [[audits.gpu-alloc]]
 who = "Teodor Tanasoaia <ttanasoaia@mozilla.com>"
@@ -11922,6 +11996,13 @@ notes = "Only new type definitions and updating others for some platforms, no ma
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.libc]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+delta = "0.2.148 -> 0.2.149"
+notes = "Lots of new functions and constants for new platforms and nothing out of the ordinary for what one would expect of the `libc` crate."
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.libc]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.2.86"
@@ -11998,16 +12079,6 @@ aggregated-from = [
 who = "Jan-Erik Rediger <jrediger@mozilla.com>"
 criteria = "safe-to-deploy"
 delta = "0.2.141 -> 0.2.146"
-aggregated-from = [
-    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
-    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
-]
-
-[[audits.libc]]
-who = "Jan-Erik Rediger <jrediger@mozilla.com>"
-criteria = "safe-to-deploy"
-delta = "0.2.148 -> 0.2.149"
-notes = "New defintions for a new target we don't use"
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -12732,6 +12803,13 @@ who = "Dan Gohman <dev@sunfishcode.online>"
 criteria = "safe-to-deploy"
 delta = "0.6.2 -> 0.6.3"
 notes = "Just a dependency version bump and documentation update"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.memfd]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+delta = "0.6.3 -> 0.6.4"
+notes = "This commit only updated the dependency `rustix`, so same as before."
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.memmap2]]
@@ -13483,6 +13561,15 @@ aggregated-from = [
 who = "Teodor Tanasoaia <ttanasoaia@mozilla.com>"
 criteria = "safe-to-deploy"
 delta = "0.12.0@git:b99d58ea435090e561377949f428bce2c18451bb -> 0.12.0@git:76003dc0035d53a474d366dcdf49d2e4d12e921f"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.naga]]
+who = "Teodor Tanasoaia <ttanasoaia@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.13.0@git:33b75a27d93c6574b11b4dd4492b85b5783d6c52 -> 0.13.0@git:e25280df9316434ef7752970016d01a3aede3f17"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -16206,6 +16293,15 @@ aggregated-from = [
 who = "Jeff Muizelaar <jmuizelaar@mozilla.com>"
 criteria = "safe-to-deploy"
 version = "0.2.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.qlog]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "0.9.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -19755,6 +19851,15 @@ aggregated-from = [
 ]
 
 [[audits.time]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.3.17 -> 0.3.23"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.time]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "0.3.20 -> 0.3.22"
@@ -19781,6 +19886,15 @@ aggregated-from = [
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-run"
 version = "0.1.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.time-core]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.1.0 -> 0.1.1"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -19814,6 +19928,15 @@ aggregated-from = [
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-run"
 delta = "0.2.4 -> 0.2.6"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.time-macros]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.2.6 -> 0.2.10"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -23415,6 +23538,15 @@ aggregated-from = [
 ]
 
 [[audits.wgpu-core]]
+who = "Teodor Tanasoaia <ttanasoaia@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:858d7d590ef9ebfe1b91f6f0925aacde15cce714 -> 0.17.0@git:75989192a9c8f70893882ce0f4373ac217d380c3"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-core]]
 who = "Nicolas Silva <nical@fastmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.17.0@git:9a76c483da4891fb7046c579e36d7c54bdb0b251 -> 0.17.0@git:1495e159faf721cbf87a0634157682f454a963fb"
@@ -23648,6 +23780,15 @@ aggregated-from = [
 ]
 
 [[audits.wgpu-hal]]
+who = "Teodor Tanasoaia <ttanasoaia@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:858d7d590ef9ebfe1b91f6f0925aacde15cce714 -> 0.17.0@git:75989192a9c8f70893882ce0f4373ac217d380c3"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-hal]]
 who = "Nicolas Silva <nical@fastmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.17.0@git:9a76c483da4891fb7046c579e36d7c54bdb0b251 -> 0.17.0@git:1495e159faf721cbf87a0634157682f454a963fb"
@@ -23875,6 +24016,15 @@ aggregated-from = [
 who = "Nicolas Silva <nical@fastmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.17.0@git:7fea9e934efd8d5dc03b9aa3e06b775c1ac4a23e -> 0.17.0@git:7e0d6c971f900f6a8f01a9de9c41f7894164a82c"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-types]]
+who = "Teodor Tanasoaia <ttanasoaia@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.17.0@git:858d7d590ef9ebfe1b91f6f0925aacde15cce714 -> 0.17.0@git:75989192a9c8f70893882ce0f4373ac217d380c3"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -25344,6 +25494,16 @@ aggregated-from = [
 criteria = "safe-to-deploy"
 user-id = 51017
 start = "2020-03-17"
+end = "2024-10-25"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[trusted.libc]]
+criteria = "safe-to-deploy"
+user-id = 51017
+start = "2020-03-17"
 end = "2024-08-19"
 aggregated-from = "https://raw.githubusercontent.com/atuinsh/atuin/vetting/supply-chain/audits.toml"
 
@@ -25643,16 +25803,6 @@ user-id = 189
 start = "2019-02-25"
 end = "2024-07-15"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.regex-automata]]
-criteria = "safe-to-deploy"
-user-id = 189
-start = "2019-02-25"
-end = "2024-09-20"
-aggregated-from = [
-    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
-    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
-]
 
 [[trusted.regex-syntax]]
 criteria = "safe-to-deploy"
