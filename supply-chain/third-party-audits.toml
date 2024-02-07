@@ -8724,6 +8724,24 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.enum-map]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "2.7.3"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.enum-map-derive]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "0.17.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.enum-primitive-derive]]
 who = "Gabriele Svelto <gsvelto@mozilla.com>"
 criteria = "safe-to-deploy"
@@ -9402,6 +9420,12 @@ criteria = "safe-to-deploy"
 delta = "0.2.4 -> 0.2.5"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
+[[audits.fiat-crypto]]
+who = "Brandon Pitman <bran@bran.land>"
+criteria = "safe-to-deploy"
+delta = "0.2.5 -> 0.2.6"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
 [[audits.file-per-thread-logger]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
@@ -9482,6 +9506,12 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 who = "Brandon Pitman <bran@bran.land>"
 criteria = "safe-to-deploy"
 delta = "1.23.0 -> 1.23.1"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.fixed]]
+who = "Brandon Pitman <bran@bran.land>"
+criteria = "safe-to-deploy"
+delta = "1.23.1 -> 1.25.0"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.fixed-macro]]
@@ -12996,6 +13026,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/cargo-vet/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
+
+[[audits.itertools]]
+who = "Nick Fitzgerald <fitzgen@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.10.5 -> 0.12.1"
+notes = """
+Minimal `unsafe` usage. Few blocks that existed looked reasonable. Does what it
+says on the tin: lots of iterators.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.itertools]]
 who = "ChromeOS"
@@ -17382,6 +17422,16 @@ notes = "This crate shells out to the pkg-config executable, but it appears to s
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.pkg-config]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+delta = "0.3.26 -> 0.3.29"
+notes = """
+No `unsafe` additions or anything outside of the purview of the crate in this
+change.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.pkg-config]]
 who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = "does-not-implement-crypto"
 version = "0.3.26"
@@ -18401,6 +18451,15 @@ aggregated-from = [
 who = "Kershaw Chang <kershaw@mozilla.com>"
 criteria = "safe-to-deploy"
 version = "0.9.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.qlog]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.9.0 -> 0.11.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -27215,6 +27274,27 @@ criteria = "safe-to-run"
 delta = "7.0.0 -> 7.0.1"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
+[[audits.zstd]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+delta = "0.11.1+zstd.1.5.2 -> 0.13.0"
+notes = """
+No major updates to the crate here. Small updates to `unsafe` code which are
+refactorings of what was there prior.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.zstd-safe]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+delta = "5.0.1+zstd.1.5.2 -> 7.0.0"
+notes = """
+Lots of new comments around methods and refactorings for updates in zstd itself.
+Does contain new unsafe code, notably an implementation of an internal trait for
+the standard library `io::Cursor` type.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[trusted.aho-corasick]]
 criteria = "safe-to-deploy"
 user-id = 189
@@ -29027,6 +29107,16 @@ user-id = 64539
 start = "2021-11-15"
 end = "2025-01-02"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[trusted.windows-core]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2021-11-15"
+end = "2024-09-20"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
 
 [[trusted.windows-sys]]
 criteria = "safe-to-deploy"
