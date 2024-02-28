@@ -76,7 +76,10 @@ aggregated-from = [
 
 [criteria.ub-risk-0]
 description = """
-This crate cannot cause undefined behavior because it contains no unsafe code.
+No unsafe code.
+
+Full description of the audit criteria can be found at
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-0
 """
 implies = "ub-risk-1"
 aggregated-from = [
@@ -86,19 +89,10 @@ aggregated-from = [
 
 [criteria.ub-risk-1]
 description = """
-A designated unsafe code reviewer has audited the unsafe code in this crate. No
-risk of causing undefined behavior was found.
+Excellent soundness.
 
-UB-RISK-1 crates are suitable for applications with the strictest memory safety
-requirements:
-- Safety documentation is comprehensive and precise. Unsafe APIs can be used
-  soundly.
-- Unsafe blocks rely on clear invariants and preconditions, and are
-  well-justified by them.
-- No way to cause undefined behavior was found during review.
-
-UB-RISK-1 crates are exceptionally well-documented and justified, leaving little
-to no room for error.
+Full description of the audit criteria can be found at
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-1
 """
 implies = "ub-risk-2"
 aggregated-from = [
@@ -108,21 +102,10 @@ aggregated-from = [
 
 [criteria.ub-risk-2]
 description = """
-A designated unsafe code reviewer has audited the unsafe code in this crate. It
-has been found to pose a trivial risk of causing undefined behavior.
+Negligible unsoundness or average soundness.
 
-UB-RISK-2 crates are suitable for most applications:
-- Safety documentation is relatively comprehensive, though it may not be
-  adequately precise. Unsafe APIs can be used soundly with very minor caution.
-- Unsafe blocks may rely on informal invariants and preconditions. The reasoning
-  required to justify them may be especially difficult or under-documented.
-- Undefined behavior may be possible under extraordinary circumstances.
-
-UB-RISK-2 crates are effectively \"the average good crate\". While they may have
-very slight (but real) soundness issues, they are safe to use in general without
-much worry. These crates may exhibit undefined behavior under \"extraordinary
-circumstances\", which is ultimately up to reviewer discretion. Users may expect
-that reasonable use of the crate will not cause undefined behavior.
+Full description of the audit criteria can be found at
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-2
 """
 implies = "ub-risk-3"
 aggregated-from = [
@@ -132,25 +115,10 @@ aggregated-from = [
 
 [criteria.ub-risk-3]
 description = """
-A designated unsafe code reviewer has audited the unsafe code in this crate. It
-has been found to pose a significant risk of causing undefined behavior.
+Mild unsoundness or suboptimal soundness.
 
-UB-RISK-3 crates are suitable for select applications:
-- Safety documentation may not be adequately comprehensive or precise. Unsafe
-  APIs can be used soundly with a decent amount of caution.
-- Unsafe blocks may rely on under-documented or inferred invariants and
-  preconditions. The reasoning required to justify them may rely on specific
-  interpretations of undefined behavior that are under-specified. Those
-  interpretations must not actively cause UB, and should be unlikely to begin
-  causing UB in the future.
-- Undefined behavior may be possible under uncommon circumstances.
-
-UB-RISK-3 crates may not uphold the typical standards required for unsafe code,
-but are still used because they have been widely adopted and will inevitably be
-leveraged by indirect dependencies. These crates may exhibit undefined behavior
-under \"uncommon circumstances\", which is ultimately up to reviewer discretion.
-A decent amount of experience with unsafe code will be required to avoid
-undefined behavior.
+Full description of the audit criteria can be found at
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-3
 """
 implies = "ub-risk-4"
 aggregated-from = [
@@ -160,22 +128,10 @@ aggregated-from = [
 
 [criteria.ub-risk-4]
 description = """
-A designated unsafe code reviewer has audited the unsafe code in this crate. It
-has been found to pose a high risk of causing undefined behavior.
+Extreme unsoundness.
 
-UB-RISK-4 crates are unsuitable except in specific situations:
-- Safety documentation may be nonexistent. Unsafe APIs may be difficult to use
-  safely even with experience writing unsafe code and specific domain expertise.
-- Unsafe blocks may rely on undocumented invarianats or platform-specific
-  behavior. It may be difficult or impossible to reason about all possible
-  situations that may cause undefined behavior. Even a best-effort review is
-  expected to miss at least some possible unsoundness.
-- Undefined behavior may be possible under common circumstances.
-
-UB-RISK-4 crates may have APIs that are difficult to use without causing
-undefined behavior. They may require a large amount of domain expertise to use
-correctly, have large unsafe APIs with insufficient documentation, or perform
-many operations from safe code that could cause undefined behavior.
+Full description of the audit criteria can be found at
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-4
 """
 aggregated-from = [
     "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT",
@@ -2705,6 +2661,15 @@ delta = "0.8.3 -> 0.8.5"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.ahash]]
+who = "Mike Hommey <mh+mozilla@glandium.org>"
+criteria = "safe-to-deploy"
+delta = "0.7.6 -> 0.7.8"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
 [[audits.ahash]]
@@ -9399,6 +9364,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.fd-lock]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "3.0.12 -> 3.0.13"
+notes = "Dependency updates only"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.fdeflate]]
 who = "Johan Andersson <opensource@embark-studios.com>"
 criteria = "safe-to-deploy"
@@ -12661,6 +12636,15 @@ aggregated-from = [
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.23.14"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.image]]
+who = "Chih-Yao Chuang <jasonchuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.23.14 -> 0.24.8"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -18699,6 +18683,15 @@ delta = "0.11.0 -> 0.12.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.qrcode]]
+who = "Chih-Yao Chuang <jasonchuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.13.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.quanta]]
@@ -27247,6 +27240,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.xshell-venv]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "1.1.0 -> 1.2.0"
+notes = "Added a file lock on the created directory"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.xxhash-rust]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-4"
@@ -27566,6 +27569,12 @@ aggregated-from = [
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-run"
 version = "7.0.0"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.zipf]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-deploy"
+version = "7.0.1"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.zipf]]
@@ -29794,6 +29803,34 @@ start = "2019-08-20"
 end = "2024-07-14"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[trusted.wit-bindgen]]
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2024-02-23"
+end = "2025-02-23"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[trusted.wit-bindgen-core]]
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2024-02-23"
+end = "2025-02-23"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[trusted.wit-bindgen-rust]]
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2024-02-23"
+end = "2025-02-23"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[trusted.wit-bindgen-rust-macro]]
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2024-02-23"
+end = "2025-02-23"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[trusted.wit-component]]
 criteria = "safe-to-deploy"
 user-id = 73222
@@ -29813,6 +29850,13 @@ criteria = "safe-to-deploy"
 user-id = 73222
 start = "2024-02-15"
 end = "2025-02-16"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[trusted.witx]]
+criteria = "safe-to-deploy"
+user-id = 1
+start = "2021-06-22"
+end = "2025-02-22"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[trusted.zcash_address]]
