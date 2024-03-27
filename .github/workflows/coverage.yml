@@ -11,6 +11,9 @@ jobs:
       with:
         tool: cargo-tarpaulin
     - run: cargo tarpaulin --out xml --locked --all-features --verbose
+      env:
+        # workaround https://github.com/xd009642/tarpaulin/issues/1499
+        RUSTFLAGS: -Cstrip=none
     - uses: codecov/codecov-action@v3
 
 on:
