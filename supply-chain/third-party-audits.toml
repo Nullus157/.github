@@ -2321,6 +2321,18 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[wildcard-audits.weedle2]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+user-id = 127697
+start = "2022-06-16"
+end = "2025-03-05"
+notes = "Maintained by Mozilla"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[wildcard-audits.wiggle]]
 who = "Bobby Holley <bobbyholley@gmail.com>"
 criteria = "safe-to-deploy"
@@ -2763,6 +2775,15 @@ Reviewed in https://crrev.com/c/5171063
 
 Previously reviewed during security review and the audit is grandparented in.
 """
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.aho-corasick]]
+who = "Dustin J. Mitchell <djmitche@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.1.2 -> 1.1.3"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -4026,6 +4047,20 @@ aggregated-from = [
 ]
 
 [[audits.autocfg]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "1.1.0 -> 1.2.0"
+notes = '''
+Grepped for `-i cipher`, `-i crypto`, `'\bfs\b'``, `'\bnet\b'``, `'\bunsafe\b'``
+and nothing changed from the baseline audit of 1.1.0.  Skimmed through the
+1.1.0 => 1.2.0 delta and everything seemed okay.
+'''
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.autocfg]]
 who = "Josh Stone <jistone@redhat.com>"
 criteria = "safe-to-deploy"
 version = "1.1.0"
@@ -4775,6 +4810,15 @@ delta = "0.9.0 -> 0.10.2"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.block-buffer]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.10.4"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.block-buffer]]
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-deploy"
 version = "0.9.0"
@@ -4912,6 +4956,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[audits.bytecount]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.3"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.bytemuck]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -5040,6 +5093,16 @@ aggregated-from = [
 who = "agl@chromium.org"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.4.0 -> 1.5.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.bytes]]
+who = "Dustin J. Mitchell <djmitche@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.5.0 -> 1.6.0"
+notes = "Update removes some unsafe, and includes verifiable safety comments for newly-added unsafe."
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -5537,6 +5600,15 @@ version = "0.1.1"
 notes = "No unsafe usage or ambient capabilities"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
 
+[[audits.cfg_aliases]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.chacha20]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
@@ -5884,6 +5956,25 @@ who = "danakj <danakj@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "4.5.1 -> 4.5.2"
 notes = "Reviewed in https://crrev.com/c/5362201"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.clap]]
+who = "Adrian Taylor <adetaylor@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "4.5.2 -> 4.5.3"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.clap]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "4.5.3 -> 4.5.4"
+notes = "Minimal diff - only module naming/nesting-related changes."
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -7853,6 +7944,16 @@ aggregated-from = [
 ]
 
 [[audits.cxx]]
+who = "Dustin J. Mitchell <djmitche@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.119 -> 1.0.120"
+notes = "Reviewed in https://chromium-review.googlesource.com/c/chromium/src/+/5392544."
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.cxx]]
 who = "Daira Hopwood <daira@jacaranda.org>"
 criteria = "safe-to-deploy"
 delta = "1.0.68 -> 1.0.72"
@@ -8050,6 +8151,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.cxxbridge-cmd]]
+who = "Dustin J. Mitchell <djmitche@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.119 -> 1.0.120"
+notes = "Version bump only."
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.cxxbridge-flags]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -8157,6 +8268,16 @@ who = "danakj <danakj@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
 delta = "1.0.117 -> 1.0.119"
 notes = "Reviewed in https://crrev.com/c/5362739"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.cxxbridge-flags]]
+who = "Dustin J. Mitchell <djmitche@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.119 -> 1.0.120"
+notes = "Reviewed in https://chromium-review.googlesource.com/c/chromium/src/+/5392544"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -8330,6 +8451,16 @@ who = "danakj <danakj@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
 delta = "1.0.117 -> 1.0.119"
 notes = "Reviewed in https://crrev.com/c/5362739"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.cxxbridge-macro]]
+who = "Dustin J. Mitchell <djmitche@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.119 -> 1.0.120"
+notes = "Reviewed in https://chromium-review.googlesource.com/c/chromium/src/+/5392544"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -8728,6 +8859,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[audits.derive-into-owned]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.derive-new]]
 who = "Johan Andersson <opensource@embark-studios.com>"
 criteria = "safe-to-deploy"
@@ -8972,6 +9112,15 @@ notes = "Some paths change across this upgrade (AFAICT they were bugfixes)."
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.dirs-next]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "2.0.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.dirs-sys]]
@@ -9378,6 +9527,16 @@ criteria = "safe-to-deploy"
 delta = "0.18.0 -> 0.19.0"
 notes = "No unsafe usage and no ambient capabilities"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
+
+[[audits.embed-manifest]]
+who = "Alex Franchuk <afranchuk@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "1.4.0"
+notes = "Necessary dependencies, all environment variable access is for build script vars set by cargo."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
 
 [[audits.embed-resource]]
 who = "Johan Andersson <opensource@embark-studios.com>"
@@ -9789,6 +9948,13 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.escape8259]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-run"
+version = "0.5.2"
+notes = "No unsafe code, crate does what it says on the tin, small crate."
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[audits.euclid]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -10157,6 +10323,12 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 who = "Brandon Pitman <bran@bran.land>"
 criteria = "safe-to-deploy"
 delta = "0.2.5 -> 0.2.6"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.fiat-crypto]]
+who = "Brandon Pitman <bran@bran.land>"
+criteria = "safe-to-deploy"
+delta = "0.2.6 -> 0.2.7"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.file-per-thread-logger]]
@@ -12170,6 +12342,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.goblin]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.7.1 -> 0.8.0"
+notes = "MSRV bump, no unsafe changes"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.google-cloud-googleapis]]
 who = "Johan Andersson <opensource@embark-studios.com>"
 criteria = "safe-to-deploy"
@@ -13754,6 +13936,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.inventory]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.11"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.inventory-impl]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
@@ -14080,9 +14271,34 @@ aggregated-from = [
 
 [[audits.itoa]]
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
-criteria = "does-not-implement-crypto"
-delta = "1.0.9 -> 1.0.10"
-notes = 'Grepped for \"crypt\", \"cipher\" - there were no hits'
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+version = "1.0.10"
+notes = '''
+I grepped for \"crypt\", \"cipher\", \"fs\", \"net\" - there were no hits.
+
+There are a few places where `unsafe` is used.  Unsafe review notes can be found
+in https://crrev.com/c/5350697.
+
+Version 1.0.1 of this crate has been added to Chromium in
+https://crrev.com/c/3321896.
+'''
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.itoa]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.10 -> 1.0.11"
+notes = """
+Straightforward diff between 1.0.10 and 1.0.11 - only 3 commits:
+
+* Bumping up the version
+* A touch up of comments
+* And my own PR to make `unsafe` blocks more granular:
+  https://github.com/dtolnay/itoa/pull/42
+"""
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -14687,6 +14903,15 @@ aggregated-from = [
 ]
 
 [[audits.libc]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.147 -> 0.2.153"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.libc]]
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
 criteria = "ub-risk-4"
 version = "0.2.152"
@@ -14998,6 +15223,13 @@ aggregated-from = [
 ]
 
 [[audits.libtest-mimic]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-run"
+delta = "0.6.1 -> 0.7.0"
+notes = "Only minor changes with new flags and such, no major updates to `unsafe` or anything outside of a test framework."
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.libtest-mimic]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.6.0"
@@ -15127,6 +15359,16 @@ who = "Aria Beingessner <a.beingessner@gmail.com>"
 criteria = "safe-to-deploy"
 version = "0.5.4"
 notes = "I own this crate (I am contain-rs) and 0.5.4 passes miri. This code is very old and used by lots of people, so I'm pretty confident in it, even though it's in maintenance-mode and missing some nice-to-have APIs."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.linked-hash-map]]
+who = "Alex Franchuk <afranchuk@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.5.4 -> 0.5.6"
+notes = "New unsafe code has debug assertions and meets invariants. All other changes are formatting-related."
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -16650,6 +16892,15 @@ aggregated-from = [
 ]
 
 [[audits.nix]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.27.1 -> 0.28.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.nix]]
 who = "David Koloski <dkoloski@google.com>"
 criteria = ["ub-risk-3", "safe-to-run"]
 version = "0.26.2"
@@ -16912,6 +17163,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.num-cmp]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.num-complex]]
 who = "Li-Yu Yu <aaronyu@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -16983,6 +17243,15 @@ notes = "Fixes some argument-handling panic bugs."
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.num-iter]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.1.43"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.num-iter]]
@@ -17505,6 +17774,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.oneshot-uniffi]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.1.5 -> 0.1.6"
+notes = "Synced with the orginal crate, no new unsafe"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.opaque-debug]]
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-deploy"
@@ -17906,6 +18185,15 @@ aggregated-from = [
 who = "George Burgess IV <gbiv@google.com>"
 criteria = "does-not-implement-crypto"
 delta = "0.11.2 -> 0.11.1"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.parking_lot]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.11.2 -> 0.12.1"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -19037,9 +19325,14 @@ aggregated-from = [
 
 [[audits.proc-macro2]]
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
-criteria = "does-not-implement-crypto"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
 version = "1.0.78"
-notes = "Grepped for \"crypt\", \"cipher\" - there were no hits."
+notes = """
+Grepped for \"crypt\", \"cipher\", \"fs\", \"net\" - there were no hits
+(except for a benign \"fs\" hit in a doc comment)
+
+Notes from the `unsafe` review can be found in https://crrev.com/c/5385745.
+"""
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -19063,6 +19356,15 @@ but they seem sound - additional `unsafe` audit notes can be found in
 https://crrev.com/c/5178771/comment/32dbab4e_c7402137 and
 https://crrev.com/c/5178771/4/third_party/rust/chromium_crates_io/vendor/proc-macro2-1.0.76/src/wrapper.rs#783
 """
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.proc-macro2]]
+who = "Adrian Taylor <adetaylor@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.78 -> 1.0.79"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -19719,6 +20021,15 @@ delta = "1.0.23 -> 1.0.27"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.quote]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.15"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.quote]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.9"
@@ -20214,6 +20525,12 @@ delta = "1.8.1 -> 1.9.0"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.rayon]]
+who = "Brandon Pitman <bran@bran.land>"
+criteria = "safe-to-deploy"
+delta = "1.9.0 -> 1.10.0"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.rayon]]
 who = "Josh Stone <jistone@redhat.com>"
 criteria = "safe-to-deploy"
 version = "1.5.3"
@@ -20471,6 +20788,16 @@ aggregated-from = [
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.10.2 -> 1.10.3"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.regex]]
+who = "Dustin J. Mitchell <djmitche@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.10.3 -> 1.10.4"
+notes = "Docs changes only."
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -21520,6 +21847,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.scroll]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.11.0 -> 0.12.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.scroll_derive]]
 who = "Jan-Erik Rediger <jrediger@mozilla.com>"
 criteria = "safe-to-deploy"
@@ -21544,6 +21880,15 @@ who = "Jan-Erik Rediger <jrediger@mozilla.com>"
 criteria = "safe-to-deploy"
 delta = "0.11.0 -> 0.11.1"
 notes = "Dependency syn v2 update only"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.scroll_derive]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.11.1 -> 0.12.0"
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -22415,6 +22760,18 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.serde_json_lenient]]
+who = "djmitche@chromium.org"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "0.2.0 -> 0.2.1"
+notes = """
+Reviewed in https://crrev.com/c/5385822
+"""
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.serde_path_to_error]]
 who = "Ben Dean-Kawamura <bdk@mozilla.com>"
 criteria = "safe-to-deploy"
@@ -22488,6 +22845,15 @@ delta = "0.8.24 -> 0.8.26"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.serial-unix]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.serial_test]]
@@ -22672,6 +23038,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[audits.shell-words]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "1.1.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.shlex]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -22796,6 +23171,15 @@ criteria = "safe-to-deploy"
 version = "1.2.0"
 notes = "Small crate with no unsafe or ambient capabilities"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
+
+[[audits.simple_logger]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.16.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
 
 [[audits.siphasher]]
 who = "Jack Grigg <jack@electriccoin.co>"
@@ -22987,6 +23371,15 @@ criteria = "safe-to-deploy"
 delta = "0.6.0 -> 0.7.1"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.smawk]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "0.3.2"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
@@ -23221,6 +23614,15 @@ who = "Conrad Ludgate <conradludgate@gmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.1.2 -> 0.1.3"
 aggregated-from = "https://raw.githubusercontent.com/atuinsh/atuin/vetting/supply-chain/audits.toml"
+
+[[audits.strsim]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.10.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
 
 [[audits.strsim]]
 who = "danakj@chromium.org"
@@ -23472,6 +23874,25 @@ Reviewed in https://crrev.com/c/5171063
 
 Previously reviewed during security review and the audit is grandparented in.
 """
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.syn]]
+who = "Adrian Taylor <adetaylor@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "2.0.52 -> 2.0.53"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.syn]]
+who = "Dustin J. Mitchell <djmitche@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "2.0.53 -> 2.0.55"
+notes = "Mostly clippy, test changes - no changed unsafe."
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -23986,6 +24407,15 @@ criteria = "safe-to-deploy"
 delta = "0.15.2 -> 0.16.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.textwrap]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "0.15.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
@@ -25690,6 +26120,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.uefi]]
+who = "Joseph Sussman <josephsussman@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.25.0 -> 0.27.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.uefi-macros]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -25717,6 +26156,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.uefi-macros]]
+who = "Joseph Sussman <josephsussman@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.12.0 -> 0.13.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.uefi-raw]]
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -25730,6 +26178,15 @@ aggregated-from = [
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.uefi-raw]]
+who = "Joseph Sussman <josephsussman@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.4.0 -> 0.5.1"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -25766,6 +26223,15 @@ aggregated-from = [
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.22.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.uefi-services]]
+who = "Joseph Sussman <josephsussman@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.22.0 -> 0.24.0"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -26143,6 +26609,15 @@ The CL description contains a link to a Google-internal document with audit deta
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.unicode-linebreak]]
+who = "Jan-Erik Rediger <jrediger@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "0.1.5"
+aggregated-from = [
+    "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
 [[audits.unicode-normalization]]
@@ -27069,6 +27544,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.volatile]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.5"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.volatile-register]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -27166,6 +27650,15 @@ version = "0.2.0"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.wait-timeout]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.walkdir]]
@@ -29245,6 +29738,19 @@ aggregated-from = [
 ]
 
 [[audits.zip]]
+who = "Alex Franchuk <afranchuk@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "0.6.4"
+notes = """
+No unsafe code nor unwarranted dependencies. Side-effectful std usage is only
+present where expected (zip archive reading/writing and unpacking)
+"""
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.zip]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-run"
 delta = "0.6.2 -> 0.6.3"
@@ -31164,6 +31670,13 @@ start = "2023-01-01"
 end = "2024-05-26"
 notes = "Maintained by Bytecode Alliance that we (Embark) are part of and we trust their review & release process on https://github.com/bytecodealliance/wasmtime"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
+
+[[trusted.wasmtime-slab]]
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2024-03-20"
+end = "2025-04-02"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[trusted.wasmtime-types]]
 criteria = "safe-to-deploy"
