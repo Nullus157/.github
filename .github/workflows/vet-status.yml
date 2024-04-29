@@ -13,7 +13,7 @@ jobs:
       if: hashFiles('supply-chain/config.toml') != ''
       with:
         tool: cargo-vet
-    - uses: taiki-e/cache-cargo-install-action@v1
+    - uses: taiki-e/cache-cargo-install-action@v2
       if: hashFiles('supply-chain/config.toml') != ''
       with:
         tool: toml2json
