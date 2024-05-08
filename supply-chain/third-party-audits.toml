@@ -2751,6 +2751,15 @@ aggregated-from = [
 ]
 
 [[audits.ahash]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.8.7 -> 0.8.11"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.ahash]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "0.8.6 -> 0.8.7"
@@ -2932,7 +2941,7 @@ Written by Robert Bragg who now works at Embark Studios.
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
 
 [[audits.android_logger]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.13.3"
 notes = "Reviewed in CL 559548165"
@@ -3034,10 +3043,25 @@ aggregated-from = [
 ]
 
 [[audits.anstream]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
-version = "1.64.0"
+version = "0.3.2"
 notes = "Reviewed in CL 559376670"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.anstream]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-4"
+version = "0.6.5"
+notes = """
+Reviewed in CL 596713982
+Issues found:
+ - https://github.com/rust-cli/anstyle/issues/156
+ - Exhaustive review of utf8 soundness not performed
+"""
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -3101,7 +3125,7 @@ aggregated-from = [
 ]
 
 [[audits.anstyle-parse]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.2.1"
 notes = "Reviewed in CL 559131783"
@@ -3127,6 +3151,16 @@ notes = "Reviewed in CL 559375925"
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.any_all_workaround]]
+who = "Henri Sivonen <hsivonen@hsivonen.fi>"
+criteria = "safe-to-deploy"
+version = "0.1.0"
+notes = "The little code that is in this crate I reviewed and modified from packed_simd (which has previously been vendored in full instead of just this small part)."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
 [[audits.anyhow]]
@@ -3405,7 +3439,7 @@ delta = "1.0.71 -> 1.0.75"
 aggregated-from = "https://raw.githubusercontent.com/atuinsh/atuin/vetting/supply-chain/audits.toml"
 
 [[audits.anymap]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.0.0-beta2"
 notes = "Reviewed in CL 558118223"
@@ -4102,6 +4136,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.audio-mixer]]
+who = "Paul Adenot <paul@paul.cx>"
+criteria = "safe-to-deploy"
+delta = "0.1.3 -> 0.2.0"
+notes = "(I wrote all of this code)"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.authenticator]]
 who = "John M. Schanck <jschanck@mozilla.com>"
 criteria = "safe-to-deploy"
@@ -4427,6 +4471,12 @@ delta = "0.21.7 -> 0.22.0"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.base64]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-run"
+delta = "0.22.0 -> 0.22.1"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.base64]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "0.13.0 -> 0.13.1"
@@ -4482,6 +4532,16 @@ pointers. Some `debug_assert!`s document and check these invariants as well
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/cargo-vet/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.base64ct]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "1.6.0"
+notes = "Reviewed in CL 592910669"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.basic-toml]]
@@ -4647,6 +4707,22 @@ delta = "0.9.0 -> 0.10.1"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.bit-set]]
+who = [
+    "Manish Goregaokar <manishearth@google.com>",
+    "Augie Fackler <augie@google.com>",
+]
+criteria = "ub-risk-2"
+version = "0.5.3"
+notes = """
+Reviewed in CL 615008047
+Uses unsafe operations from bit-vec that are not actually unsafe.
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.bit-set]]
@@ -5095,6 +5171,19 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.bytecount]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.6.7"
+notes = """
+Reviewed in CL 596699465
+Is sound, but needs safety docs
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.bytemuck]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -5144,7 +5233,7 @@ aggregated-from = [
 
 [[audits.bytemuck]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Łukasz Anforowicz <lukasza@google.com>",
 ]
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -5161,6 +5250,20 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.5.0"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.bytemuck_derive]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+version = "1.6.0"
+notes = """
+Grepped for \"unsafe\", \"crypt\", \"cipher\", \"fs\", \"net\" - there were no
+hits except for 8 occurrences of `unsafe`.  Additional `unsafe` review comments
+can be found in https://crrev.com/c/5445719.
+"""
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -5318,6 +5421,21 @@ who = "Conrad Ludgate <conradludgate@gmail.com>"
 criteria = "safe-to-deploy"
 version = "0.2.0"
 aggregated-from = "https://raw.githubusercontent.com/atuinsh/atuin/vetting/supply-chain/audits.toml"
+
+[[audits.caliptra_cfi]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-4"
+version = "0.1.0"
+notes = """
+Reviewed in CL 609792409
+Rating is ub-risk-4 because this crate makes assumptions about single-threadedness.
+However, on the platform it is intended for, this is fine and can be treated as having ub-risk-3.
+Issues found: https://github.com/chipsalliance/caliptra-cfi/pull/10
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
 
 [[audits.camino]]
 who = "Pat Hickey <phickey@fastly.com>"
@@ -5822,10 +5940,20 @@ aggregated-from = [
 ]
 
 [[audits.chalk_ir]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.92.0"
 notes = "Reviewed in CL 558137822"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.chalk_ir]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-0"
+version = "0.95.0"
+notes = "Reviewed in CL 599467162"
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -6359,6 +6487,21 @@ aggregated-from = [
 ]
 
 [[audits.clap_lex]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+delta = "0.5.1 -> 0.6.0"
+notes = """
+Reviewed in CL 596708333
+Issues:
+ - Unsound transmutes from OsStr to [u8] (https://github.com/clap-rs/clap/issues/5280)
+ - (optional) Incorrect safety comment (https://github.com/clap-rs/clap/pull/5281)
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.clap_lex]]
 who = "Brandon Pitman <bran@bran.land>"
 criteria = "safe-to-run"
 delta = "0.4.1 -> 0.5.0"
@@ -6476,6 +6619,13 @@ aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
+
+[[audits.cobs]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+version = "0.2.3"
+notes = "No `unsafe` code in the crate and no usage of `std`"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.codespan-reporting]]
 who = "Jamey Sharp <jsharp@fastly.com>"
@@ -6629,6 +6779,16 @@ criteria = "safe-to-deploy"
 version = "0.2.4"
 notes = "A few tiny blocks of `unsafe` but each of them is very obviously correct."
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.constant_time_eq]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.3.0"
+notes = "Reviewed in CL 587904821"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
 
 [[audits.constant_time_eq]]
 who = "Jack Grigg <jack@electriccoin.co>"
@@ -6831,7 +6991,7 @@ aggregated-from = [
 ]
 
 [[audits.countme]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "3.0.1"
 notes = "Reviewed in CL 558181122"
@@ -7015,8 +7175,21 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.crc32c]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.6.5"
+notes = """
+Reviewed in CL 608991681
+Does not have much unsafe (some use of hardware intrinsics, one bit of pointer manipulation). However, the unsafe isn't documented enough. Can be upgraded to a rating 2 or 1 with some unsafe documentation.
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.crc32fast]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "1.3.2"
 notes = "Reviewed in CL 558895300"
@@ -7645,6 +7818,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.cssparser]]
+who = "Emilio Cobos Álvarez <emilio@crisal.io>"
+criteria = "safe-to-deploy"
+delta = "0.33.0 -> 0.34.0"
+notes = "I'm the publisher of the crate, and either myself or other Mozilla folks have been authors or reviewers of all the changes."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.cssparser-color]]
 who = "Emilio Cobos Álvarez <emilio@crisal.io>"
 criteria = "safe-to-deploy"
@@ -7795,6 +7978,16 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.4.0 -> 3.4.1"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.ctrlc]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-3"
+version = "3.4.0"
+notes = "Reviewed in CL 587904024"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -8935,6 +9128,30 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.d3d12]]
+who = [
+    "Erich Gubler <egubler@mozilla.com>",
+    "Jim Blandy <jimb@red-bean.com>",
+    "Nicolas Silva <nical@fastmail.com>",
+    "Erich Gubler <erichdongubler@gmail.com>",
+    "Teodor Tanasoaia <ttanasoaia@mozilla.com>",
+]
+criteria = "safe-to-deploy"
+delta = "0.7.0 -> 0.19.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.d3d12]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.19.0 -> 0.20.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.darling]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
@@ -9893,6 +10110,13 @@ version = "2.1.1"
 notes = "No unsafe usage, does use file system at time and runs resource compiler to embed it into executable which looks sound. Intended to be used only at build time"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
 
+[[audits.embedded-io]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+version = "0.4.0"
+notes = "No `unsafe` code and only uses `std` in ways one would expect the crate to do so."
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[audits.encoding_c]]
 who = "Henri Sivonen <hsivonen@hsivonen.fi>"
 criteria = "safe-to-deploy"
@@ -9915,6 +10139,20 @@ ssues/79#issuecomment-1211870361
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.encoding_rs]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.8.33"
+notes = """
+Reviewed in CL 605370461
+Needs extensive safety comments:
+ - https://github.com/hsivonen/encoding_rs/pull/101
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.encoding_rs]]
@@ -9996,6 +10234,16 @@ criteria = "safe-to-run"
 version = "0.7.7"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.enumflags2]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.7.8"
+notes = "Reviewed in CL 603523557"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -10312,6 +10560,22 @@ version = "0.5.2"
 notes = "No unsafe code, crate does what it says on the tin, small crate."
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[audits.ethnum]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-4"
+version = "1.5.0"
+notes = """
+Reviewed in CL 624267108
+Issues found:
+ - error.rs: Unsoundly transmutes into std error types, making assumptions about stability and layout
+ - fmt.rs: GenericRadix trait should be unsafe
+ - fmt.rs: fmt_u256 has safety comments that are incorrect
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.euclid]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -10419,6 +10683,30 @@ notes = "The changes in this version are mine."
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.fallible_collections]]
+who = "Mike Hommey <mh+mozilla@glandium.org>"
+criteria = "safe-to-deploy"
+delta = "0.4.6 -> 0.4.9"
+notes = "Mostly soundness fixes."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.fast-float]]
+who = ["Augie Fackler <augie@google.com>", "< manishearth@google.com>"]
+criteria = "ub-risk-4"
+version = "0.2.0"
+notes = """
+Reviewed in 
+Issues found:
+ - https://github.com/aldanor/fast-float-rust/issues/37 (multiple issues)
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.faster-hex]]
@@ -10596,7 +10884,7 @@ notes = "No unsafe usage or ambient capabilities"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
 
 [[audits.fdt]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.1.5"
 notes = """
@@ -10715,6 +11003,12 @@ criteria = "safe-to-deploy"
 delta = "0.2.6 -> 0.2.7"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
+[[audits.fiat-crypto]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-deploy"
+delta = "0.2.7 -> 0.2.8"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
 [[audits.file-per-thread-logger]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
@@ -10750,7 +11044,7 @@ aggregated-from = [
 ]
 
 [[audits.filetime]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.2.19"
 notes = "Reviewed in CL 559795004"
@@ -10843,7 +11137,7 @@ aggregated-from = [
 ]
 
 [[audits.fixedbitset]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.2.0"
 notes = "Reviewed in CL 559071858"
@@ -10899,7 +11193,7 @@ aggregated-from = [
 ]
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "1.0.24"
 notes = """
@@ -10916,7 +11210,7 @@ aggregated-from = [
 ]
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 delta = "1.0.24 -> 1.0.27"
 notes = """
@@ -10929,7 +11223,7 @@ aggregated-from = [
 ]
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 delta = "1.0.27 -> 1.0.28"
 notes = """
@@ -10961,10 +11255,13 @@ aggregated-from = [
 ]
 
 [[audits.fleetspeak]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.4.0"
-notes = "Reviewed in CL 551181045"
+notes = """
+Reviewed in CL 551181045
+Opens files from file descriptors obtained from potentially untrusted sources. This may be okay depending on your use case, and is a common pattern for IPC, but should be included in your project with care since opening the wrong mmaped fd may cause UB.
+"""
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -11102,12 +11399,42 @@ aggregated-from = [
 ]
 
 [[audits.font-types]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-1"]
+version = "0.5.2"
+notes = """
+Grepped for \"unsafe\", \"crypt\", \"cipher\", \"fs\", \"net\" - there were no
+hits except for 3 `unsafe impl bytemuck::SomeTrait for ...`.  Each `impl` had a
+reasonable safety comment and there were no actual `unsafe` blocks, so I think
+this can be treated as `ub-risk-1`.  Additional `unsafe` review comments can be
+found in https://crrev.com/c/5445719.
+
+For overall `safe-to-deploy` and `does-not-implement-crypto` I am mostly
+relying on certification by the Chromium engineers who work on the library
+(mostly drott@chromium.org).
+"""
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.font-types]]
 who = "danakj <danakj@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
 delta = "0.4.2 -> 0.4.3"
 notes = "Reviewed in https://crrev.com/c/5362378. No new use of unsafe."
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.font-types]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.5.0"
+notes = "Reviewed in CL 617547813"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -12326,6 +12653,12 @@ delta = "0.2.12 -> 0.2.14"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.getrandom]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-deploy"
+delta = "0.2.14 -> 0.2.15"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.getrandom]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "0.2.6 -> 0.2.7"
@@ -12539,8 +12872,23 @@ criteria = "safe-to-deploy"
 version = "0.4.0"
 aggregated-from = "https://raw.githubusercontent.com/atuinsh/atuin/vetting/supply-chain/audits.toml"
 
+[[audits.gix]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-4"
+version = "0.55.2"
+notes = """
+Reviewed in CL 581562516
+Issues found:
+ - Unsafe transmute of lifetime (https://github.com/Byron/gitoxide/pull/1154)
+ - Interrupt handler function should be unsafe
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.gix-commitgraph]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.22.0"
 notes = "Reviewed in CL 581562496"
@@ -12550,7 +12898,7 @@ aggregated-from = [
 ]
 
 [[audits.gix-config-value]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.14.0"
 notes = "Reviewed in CL 581042137"
@@ -12612,8 +12960,24 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.gix-pack]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-4"
+delta = "0.44.0 -> 0.45.0"
+notes = """
+Reviewed in CL 594331347
+Issues found:
+ - https://github.com/Byron/gitoxide/pull/1230
+ - https://github.com/Byron/gitoxide/issues/1231
+(previously found issues have been fixed)
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.gix-ref]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2-thorough"
 version = "0.38.0"
 notes = "Reviewed in CL 581562488"
@@ -12632,6 +12996,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.gix-revision]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+delta = "0.23.0 -> 0.24.0"
+notes = "Reviewed in CL 594331337"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.gix-sec]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-2"
@@ -12643,7 +13017,7 @@ aggregated-from = [
 ]
 
 [[audits.gix-tempfile]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "11.0.0"
 notes = "Reviewed in CL 581562529"
@@ -12841,6 +13215,24 @@ aggregated-from = [
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "0.2.2 -> 0.2.3"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.gpu-descriptor]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.2.3 -> 0.3.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.gpu-descriptor-types]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.1.1 -> 0.2.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -13056,6 +13448,42 @@ aggregated-from = [
 ]
 
 [[audits.half]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "1.8.2"
+notes = """
+Reviewed in CL 590192561
+Issues found:
+ - The `set_len`s in slice.rs and vec.rs are premature and create uninitialized vectors
+ - (internal safety) f16x4_to_f32x4 and f16x4_to_f32x4_x86_f16c do not enforce i.len() > 4. Should be marked unsafe
+(no issues filed, all of the issues appear to be fixed on GitHub main)
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.half]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-1"
+version = "1.8.3"
+notes = "Reviewed in CL 590192561"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.half]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-1"
+version = "2.4.0"
+notes = "Reviewed in CL 610738461"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.half]]
 who = "John M. Schanck <jschanck@mozilla.com>"
 criteria = "safe-to-deploy"
 version = "1.8.2"
@@ -13136,6 +13564,16 @@ aggregated-from = [
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "0.7.0 -> 0.8.1"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.hashlink]]
+who = "Mike Hommey <mh+mozilla@glandium.org>"
+criteria = "safe-to-deploy"
+delta = "0.8.1 -> 0.8.2"
+notes = "Only dependency changes."
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -13384,7 +13822,7 @@ notes = "No major changes, just some internal refactorings."
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.home]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.5.4"
 notes = "Reviewed in CL 559796554"
@@ -13417,6 +13855,30 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.hoot]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.1.3"
+notes = """
+Reviewed in CL 607320079
+Issues found:
+ - https://github.com/algesten/hoot/issues/2 (fixed in https://github.com/algesten/hoot/pull/3)
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.hoot]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.1.4"
+notes = "Reviewed in CL 607320079"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.hostname]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -13427,13 +13889,28 @@ aggregated-from = [
 ]
 
 [[audits.hound]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "3.5.0"
 notes = """
 Reviewed in CL 564508706
 Issues found:
  - https://github.com/ruuda/hound/pull/58
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.html-escape]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.2.13"
+notes = """
+Reviewed in CL 612354454
+Issues found:
+ - decode_impl macro should have \"unsafe\" in its name and document the safety at callsites
+ - write_hex_to_vec: The Vec::set_len is UB and should only be called after filling the buffer.
 """
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
@@ -13462,6 +13939,16 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.9"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.http]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "1.49.0"
+notes = "Reviewed in CL 588379811"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -13659,6 +14146,27 @@ aggregated-from = [
 ]
 
 [[audits.hyper]]
+who = [
+    "Manish Goregaokar <manishearth@google.com>",
+    "Augie Fackler <augie@google.com>",
+]
+criteria = "ub-risk-4"
+version = "1.0.1"
+notes = """
+Reviewed in CL 588384310
+Issues found:
+ - https://github.com/hyperium/hyper/pull/3498
+ - https://github.com/hyperium/hyper/issues/3556
+ - https://github.com/hyperium/hyper/issues/3500 
+(probably not a real issue)
+ - https://github.com/hyperium/hyper/issues/3554 (documentation)
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.hyper]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-run"
 delta = "0.14.19 -> 0.14.20"
@@ -13740,6 +14248,16 @@ criteria = "safe-to-run"
 version = "0.4.1"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.hyper-util]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-2"
+version = "0.1.3"
+notes = "Reviewed in CL 605631967"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -14286,7 +14804,7 @@ aggregated-from = [
 ]
 
 [[audits.inotify]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.9.6"
 notes = "Reviewed in CL 562731461"
@@ -14866,6 +15384,16 @@ No ambient capabilities
 """
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
 
+[[audits.jiter]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.0.6"
+notes = "Reviewed in CL 615051835"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.jj-cli]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -14878,9 +15406,29 @@ aggregated-from = [
 
 [[audits.jj_cli]]
 who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.11.0"
+notes = "Reviewed in CL 586453800"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.jj_cli]]
+who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-1"
 version = "0.8.0"
 notes = "Reviewed in CL 558944141"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.jj_lib]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.11.0"
+notes = "Reviewed in CL 586453800"
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -15106,7 +15654,7 @@ aggregated-from = [
 ]
 
 [[audits.kvm-ioctls]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.14.0"
 notes = "Reviewed in CL 549307303"
@@ -15116,7 +15664,7 @@ aggregated-from = [
 ]
 
 [[audits.kvm-ioctls]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.14.0"
 notes = "Reviewed in CL 565655079"
@@ -15209,7 +15757,7 @@ aggregated-from = [
 ]
 
 [[audits.lexical-core]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """
@@ -15222,7 +15770,7 @@ aggregated-from = [
 ]
 
 [[audits.lexical-write-integer]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """
@@ -15261,7 +15809,7 @@ aggregated-from = [
 ]
 
 [[audits.lexical_util]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """
@@ -15274,7 +15822,7 @@ aggregated-from = [
 ]
 
 [[audits.lexical_write_float]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """
@@ -15397,6 +15945,16 @@ delta = "0.2.142 -> 0.2.149"
 notes = "Audited at https://fxrev.dev/932979"
 aggregated-from = [
     "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.libc]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-4"
+delta = "0.2.150 -> 0.2.153"
+notes = "Reviewed in CL 622219230"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -15579,6 +16137,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.libloading]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.7.4 -> 0.8.3"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.libm]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
@@ -15654,10 +16221,20 @@ aggregated-from = [
 ]
 
 [[audits.libshpool]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.3.3"
 notes = "Reviewed in CL 580903771"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.libshpool]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "0.5.0"
+notes = "Reviewed in CL 609436265"
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -15776,6 +16353,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.line-index]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-2"
+version = "0.1.1"
+notes = "Reviewed in CL 599482318"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.line-wrap]]
 who = "Johan Andersson <opensource@embark-studios.com>"
 criteria = "safe-to-deploy"
@@ -15857,6 +16444,16 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.9.0"
 notes = "Reviewed in CL 548095317"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.linux-loader]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+delta = "0.9.0 -> 0.10.0"
+notes = "Reviewed in CL 600836074"
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -16258,6 +16855,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.malloced]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-2"
+version = "1.3.1"
+notes = "Reviewed in CL 604812730"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.match_cfg]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
@@ -16366,7 +16973,7 @@ aggregated-from = [
 ]
 
 [[audits.memchr]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "2.6.3"
 notes = """
@@ -16685,6 +17292,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.metal]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.27.0 -> 0.28.0"
+notes = "No significantly changed functionality. Some warnings resolved, bumped `core-graphics-types`, newer versions of Metal supported."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.metrics]]
 who = "Jack Grigg <jack@z.cash>"
 criteria = "safe-to-deploy"
@@ -16897,7 +17514,7 @@ aggregated-from = [
 ]
 
 [[audits.minifier]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.2.3"
 notes = """
@@ -17303,6 +17920,29 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.naga]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.14.0 -> 0.19.2"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.naga]]
+who = [
+    "Jim Blandy <jimb@red-bean.com>",
+    "Nicolas Silva <nical@fastmail.com>",
+    "Erich Gubler <erichdongubler@gmail.com>",
+    "Teodor Tanasoaia <ttanasoaia@mozilla.com>",
+]
+criteria = "safe-to-deploy"
+delta = "0.19.2 -> 0.20.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.named-lock]]
 who = "crosvm"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -17481,6 +18121,19 @@ Issues:
 """
 aggregated-from = [
     "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.nix]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+delta = "0.26.1 -> 0.28.0"
+notes = """
+Reviewed in CL 622222105
+(The rating differs from the previous once since I feel that the crate needs much more safety comments)
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -17737,6 +18390,20 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.num-bigint-dig]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.8.4"
+notes = """
+Reviewed in CL 598457101
+Issues found:
+ - to_str_radix_reversed is required to return a valid string by unsafe code, but this is not documented, nor is it easy to verify. It should probably return a String (at least internally), and have better safety documentation, or a double check when converting from UTF8
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.num-cmp]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -17844,6 +18511,12 @@ delta = "0.1.43 -> 0.1.44"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.num-iter]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-deploy"
+delta = "0.1.44 -> 0.1.45"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.num-iter]]
 who = "Josh Stone <jistone@redhat.com>"
 criteria = "safe-to-deploy"
 version = "0.1.43"
@@ -17916,6 +18589,12 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-deploy"
 delta = "0.2.17 -> 0.2.18"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.num-traits]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-deploy"
+delta = "0.2.18 -> 0.2.19"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.num-traits]]
@@ -18031,7 +18710,7 @@ aggregated-from = [
 ]
 
 [[audits.num_traits]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.2.15"
 notes = "Reviewed in CL 558869499"
@@ -18137,7 +18816,7 @@ aggregated-from = [
 ]
 
 [[audits.object]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-1"
 version = "0.32.0"
 notes = "Reviewed in CL 558738698"
@@ -19590,7 +20269,7 @@ notes = "Inspected it and it is a minimal crate for blocking on futures and does
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
 
 [[audits.pollster]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.3.0"
 notes = """
@@ -19611,6 +20290,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
+
+[[audits.postcard]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+version = "1.0.8"
+notes = """
+I've audited the unsafe code to do what it looks like it's doing. Otherwise the
+crate is a standard serializer/deserializer crate.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.postgres-types]]
 who = "Johan Andersson <opensource@embark-studios.com>"
@@ -20264,6 +20953,19 @@ aggregated-from = [
 ]
 
 [[audits.proptest]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.10.1"
+notes = """
+Reviewed in CL 615011355
+Not safe with hardware_rng feature on platforms without RDRAND support. Should bubble up the invariant or have a feature test assertion
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.proptest]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "1.2.0 -> 1.4.0"
@@ -20609,7 +21311,7 @@ looks to be receiving new assistance for maintainership as well.
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.pulldown-cmark]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.9.3"
 notes = "Reviewed in CL 555491415"
@@ -20624,6 +21326,16 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.13.2"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.pyo3_macros]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-0"
+version = "0.20.3"
+notes = "Reviewed in CL 616043931"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -21094,6 +21806,16 @@ aggregated-from = [
 ]
 
 [[audits.rand_xorshift]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.2.0"
+notes = "Reviewed in CL 615005895"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.rand_xorshift]]
 who = "Sean Bowe <ewillbefull@gmail.com>"
 criteria = "safe-to-deploy"
 version = "0.3.0"
@@ -21311,6 +22033,33 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.read-fonts]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+version = "0.19.0"
+notes = """
+Grepped for \"unsafe\", \"crypt\", \"cipher\", \"fs\", \"net\" - there were no hits
+(except for a benign \"fs\" hit in a comment).
+
+For overall `safe-to-deploy` and `does-not-implement-crypto` I am mostly
+relying on certification by the Chromium engineers who work on the library
+(mostly drott@chromium.org).
+"""
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.read-fonts]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-1"
+version = "0.15.6"
+notes = "Reviewed in CL 611302616"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.realfft]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-2"
@@ -21408,7 +22157,7 @@ aggregated-from = [
 ]
 
 [[audits.ref-cast-impl]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "1.0.20"
 notes = "Reviewed in CL 585449373"
@@ -22493,7 +23242,7 @@ aggregated-from = [
 ]
 
 [[audits.ruzstd]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.4.0"
 notes = """
@@ -22502,6 +23251,16 @@ Issues found:
  - https://github.com/KillingSpark/zstd-rs/issues/44
  - extend_from_within_unchecked_branchless is hard to review but it's currently dead code
 """
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.ruzstd]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "0.6.0"
+notes = "Reviewed in CL 615772489"
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -22568,6 +23327,21 @@ delta = "1.0.16 -> 1.0.17"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.ryu-js]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.2.2"
+notes = """
+Reviewed in CL 589126213
+Issues found:
+ - Internal unsoundness around the invariants of q and i in f2s_intrinsics.rs
+ - Unclear bounds checking around get_unchecked in s2d.rs
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.safemem]]
@@ -23391,6 +24165,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[audits.serde_jcs]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.1.0"
+notes = "Reviewed in CL 590122717"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.serde_json]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -23802,6 +24586,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.sfv]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.9.3 -> 0.9.4"
+notes = "Only an update of `indexmap` 1 → 2."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.sha1]]
 who = "David Koloski <dkoloski@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-1"]
@@ -23831,7 +24625,7 @@ aggregated-from = [
 ]
 
 [[audits.sha1_smol]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "1.0.0"
 notes = "Reviewed in CL 581562531"
@@ -23963,6 +24757,22 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.1.0 -> 1.3.0"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.shlex]]
+who = [
+    "Manish Goregaokar <manishearth@google.com>",
+    "Augie Fackler <augie@google.com>",
+]
+criteria = "ub-risk-3"
+version = "1.3.0"
+notes = """
+Reviewed in CL 600742555
+This crate appears safe, but it's not clear that the unchecked utf8 stuff is necessary given the use case, and it relies on undocumented invariants from the bytes iterator code. Would be nice to have these properties documented and fuzz tested.
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -24102,11 +24912,38 @@ aggregated-from = [
 ]
 
 [[audits.skrifa]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+version = "0.19.0"
+notes = """
+Grepped for \"unsafe\", \"crypt\", \"cipher\", \"fs\", \"net\" - there were no hits
+(except for benign \"fs\" hit in `skrifa-0.19.0/src/color/traversal_tests/mod.rs`).
+
+For overall `safe-to-deploy` and `does-not-implement-crypto` I am mostly
+relying on certification by the Chromium engineers who work on the library
+(mostly drott@chromium.org).
+"""
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.skrifa]]
 who = "drott@chromium.org"
 criteria = ["ub-risk-1", "safe-to-deploy", "does-not-implement-crypto"]
 delta = "0.15.2 -> 0.15.4"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.skrifa]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.16.0"
+notes = "Reviewed in CL 614825012"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -24221,7 +25058,7 @@ aggregated-from = [
 ]
 
 [[audits.smallvec]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.11.0"
 notes = "Reviewed in CL 552492992"
@@ -24276,7 +25113,7 @@ aggregated-from = [
 ]
 
 [[audits.smol_str]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.2.0"
 notes = "Reviewed in CL 558187227"
@@ -24353,6 +25190,19 @@ delta = "0.5.5 -> 0.5.6"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.speedate]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "0.13.0"
+notes = """
+Reviewed in CL 614967252
+Would be rather straightforward to add safety comments
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.spez]]
@@ -24657,7 +25507,7 @@ aggregated-from = [
 ]
 
 [[audits.swc_atoms]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.5.7"
 notes = "Reviewed in CL 547104864"
@@ -24667,7 +25517,7 @@ aggregated-from = [
 ]
 
 [[audits.swc_common]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.31.17"
 notes = """
@@ -24681,7 +25531,7 @@ aggregated-from = [
 ]
 
 [[audits.swc_ecma_ast]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.107.0"
 notes = "Reviewed in CL 545304253"
@@ -24691,7 +25541,7 @@ aggregated-from = [
 ]
 
 [[audits.swc_ecma_parser]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.137.1"
 notes = """
@@ -25029,6 +25879,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.sync_wrapper]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-1"
+version = "0.1.2"
+notes = "Reviewed in CL 605332043"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.synstructure]]
 who = "Nika Layzell <nika@thelayzells.com>"
 criteria = "safe-to-deploy"
@@ -25119,6 +25979,16 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.40"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.tar]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.4.0"
+notes = "Reviewed in CL 627536088"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -26456,6 +27326,20 @@ aggregated-from = [
 ]
 
 [[audits.toml_edit]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.22.12"
+notes = """
+Reviewed in CL 628398549
+Issues found:
+ - Better documented safety: https://github.com/toml-rs/toml/pull/720
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.toml_edit]]
 who = "Sean Bowe <ewillbefull@gmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.19.7 -> 0.19.8"
@@ -26766,7 +27650,7 @@ aggregated-from = [
 ]
 
 [[audits.tracing-core]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 delta = "0.1.30 -> 0.1.32"
 notes = "Reviewed in CL 573852436"
@@ -26852,6 +27736,16 @@ This is a standard adapter between the `log` ecosystem and the `tracing`
 ecosystem. There's one `unsafe` block in this crate and it's well-scoped.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.tracing-log]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.2.0"
+notes = "Reviewed in CL 585090968"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
 
 [[audits.tracing-log]]
 who = "Conrad Ludgate <conradludgate@gmail.com>"
@@ -27117,7 +28011,7 @@ aggregated-from = [
 ]
 
 [[audits.uds]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.2.6"
 notes = """
@@ -27134,7 +28028,7 @@ aggregated-from = [
 
 [[audits.uds]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>",
     "<mmaurer@google.com>",
 ]
@@ -27306,12 +28200,36 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.ufmt]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-3"
+version = "0.2.0"
+notes = "Reviewed in CL 587894431"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.ufmt-write]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.0"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.ufmt-write]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.1.0"
+notes = """
+Reviewed in CL 587772035
+Issues found:
+- https://github.com/japaric/ufmt/pull/60
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -27544,7 +28462,7 @@ aggregated-from = [
 ]
 
 [[audits.unicode-bom]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "2.0.2"
 notes = "Reviewed in CL 581562581"
@@ -27737,6 +28655,16 @@ delta = "0.1.21 -> 0.1.22"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.unicode-reverse]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-1"
+version = "1.0.8"
+notes = "Reviewed in CL 622744657"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
 [[audits.unicode-segmentation]]
@@ -28509,7 +29437,7 @@ aggregated-from = [
 ]
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.7.0"
 notes = "Reviewed in CL 546255068"
@@ -28519,7 +29447,7 @@ aggregated-from = [
 ]
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.8.0"
 notes = """
@@ -28533,7 +29461,7 @@ aggregated-from = [
 ]
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.8.1"
 notes = "Reviewed in CL 559359624"
@@ -28543,7 +29471,7 @@ aggregated-from = [
 ]
 
 [[audits.vhost-user-backend]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.10.1"
 notes = "Reviewed in CL 559122379"
@@ -28563,7 +29491,7 @@ aggregated-from = [
 ]
 
 [[audits.virtiofsd]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.6.1"
 notes = """
@@ -28577,7 +29505,7 @@ aggregated-from = [
 ]
 
 [[audits.vm-memory]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.12.1"
 notes = """
@@ -28591,13 +29519,37 @@ aggregated-from = [
 ]
 
 [[audits.vm-memory]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.12.1"
 notes = """
 Reviewed in CL 556862067
 Issues from previous review fixed
 """
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.vm-memory]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.13.1"
+notes = """
+Reviewed in CL 595684339
+Issues found:
+- https://github.com/rust-vmm/vm-memory/issues/281
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.vmm_sys_util]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.12.1"
+notes = "Reviewed in CL 599627630"
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -28654,7 +29606,7 @@ aggregated-from = [
 ]
 
 [[audits.vte]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.12.0"
 notes = """
@@ -29993,6 +30945,29 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.wgpu-core]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.18.0 -> 0.19.3"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-core]]
+who = [
+    "Jim Blandy <jimb@red-bean.com>",
+    "Nicolas Silva <nical@fastmail.com>",
+    "Erich Gubler <erichdongubler@gmail.com>",
+    "Teodor Tanasoaia <ttanasoaia@mozilla.com>",
+]
+criteria = "safe-to-deploy"
+delta = "0.19.3 -> 0.20.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.wgpu-hal]]
 who = "Dzmitry Malyshau <kvark@fastmail.com>"
 criteria = "safe-to-deploy"
@@ -30064,6 +31039,29 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.wgpu-hal]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.18.0 -> 0.19.3"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-hal]]
+who = [
+    "Jim Blandy <jimb@red-bean.com>",
+    "Nicolas Silva <nical@fastmail.com>",
+    "Erich Gubler <erichdongubler@gmail.com>",
+    "Teodor Tanasoaia <ttanasoaia@mozilla.com>",
+]
+criteria = "safe-to-deploy"
+delta = "0.19.3 -> 0.20.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.wgpu-types]]
 who = "Dzmitry Malyshau <kvark@fastmail.com>"
 criteria = "safe-to-deploy"
@@ -30130,6 +31128,29 @@ aggregated-from = [
 who = "Nicolas Silva <nical@fastmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.17.0 -> 0.18.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-types]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.18.0 -> 0.19.2"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.wgpu-types]]
+who = [
+    "Jim Blandy <jimb@red-bean.com>",
+    "Nicolas Silva <nical@fastmail.com>",
+    "Erich Gubler <erichdongubler@gmail.com>",
+    "Teodor Tanasoaia <ttanasoaia@mozilla.com>",
+]
+criteria = "safe-to-deploy"
+delta = "0.19.2 -> 0.20.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -30683,6 +31704,32 @@ aggregated-from = [
 ]
 
 [[audits.zerocopy]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "0.6.1"
+notes = "Reviewed in CL 592374439"
+aggregated-from = [
+    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.zerocopy]]
+who = "Alex Franchuk <afranchuk@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "0.7.32"
+notes = """
+This crate is `no_std` so doesn't use any side-effectful std functions. It
+contains quite a lot of `unsafe` code, however. I verified portions of this. It
+also has a large, thorough test suite. The project claims to run tests with
+Miri to have stronger soundness checks, and also claims to use formal
+verification tools to prove correctness.
+"""
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.zerocopy]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "0.7.31 -> 0.7.32"
@@ -30725,6 +31772,16 @@ delta = "0.7.8 -> 0.7.32"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.zerocopy-derive]]
+who = "Alex Franchuk <afranchuk@mozilla.com>"
+criteria = "safe-to-deploy"
+version = "0.7.32"
+notes = "Clean, safe macros for zerocopy."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
 [[audits.zerocopy-derive]]
@@ -30813,7 +31870,7 @@ aggregated-from = [
 ]
 
 [[audits.zerotrie]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.1.2"
 notes = "Reviewed in https://github.com/unicode-org/icu4x/pull/2722/"
@@ -31740,6 +32797,13 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 
 [[trusted.libc]]
 criteria = "safe-to-deploy"
+user-id = 51017
+start = "2020-03-17"
+end = "2025-05-06"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[trusted.libc]]
+criteria = "safe-to-deploy"
 user-id = 2915
 start = "2021-01-27"
 end = "2024-05-05"
@@ -32000,6 +33064,13 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[trusted.prettyplease]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2022-01-04"
+end = "2025-05-06"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[trusted.proc-macro-hack]]
 criteria = "safe-to-deploy"
 user-id = 3618
@@ -32009,6 +33080,13 @@ aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
+
+[[trusted.proc-macro2]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-04-23"
+end = "2025-05-06"
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[trusted.proc-macro2]]
 criteria = "safe-to-deploy"
