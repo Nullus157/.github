@@ -2,7 +2,7 @@
 [criteria.crypto-reviewed]
 description = "The cryptographic code in this crate has been reviewed for correctness by a member of a designated set of cryptography experts within the project."
 aggregated-from = [
-    "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
@@ -34,9 +34,9 @@ aggregated-from = [
 ]
 
 [criteria.license-reviewed]
-description = "The license of this crate has been reviewed for compatibility with its usage in this repository. If the crate is not available under the MIT license, `contrib/debian/copyright` has been updated with a corresponding copyright notice for files under `depends/*/vendored-sources/CRATE_NAME`."
+description = "The license of this crate has been reviewed for compatibility with its usage in this repository."
 aggregated-from = [
-    "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
@@ -83,7 +83,7 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 """
 implies = "ub-risk-1"
 aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -96,7 +96,7 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 """
 implies = "ub-risk-2"
 aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -109,7 +109,7 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 """
 implies = "ub-risk-1"
 aggregated-from = [
-    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -122,7 +122,7 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 """
 implies = "ub-risk-3"
 aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -135,7 +135,7 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 """
 implies = "ub-risk-2"
 aggregated-from = [
-    "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -148,7 +148,7 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 """
 implies = "ub-risk-4"
 aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -160,7 +160,7 @@ Full description of the audit criteria can be found at
 https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-4
 """
 aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -772,7 +772,7 @@ who = "Nicolas Silva <nical@fastmail.com>"
 criteria = "safe-to-deploy"
 user-id = 1281
 start = "2019-03-14"
-end = "2024-04-25"
+end = "2025-04-25"
 notes = "I wrote most of the commits in the euclid reprository and review every change that is not produced by me."
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
@@ -1955,6 +1955,19 @@ so and will actively maintain this crate over time.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[wildcard-audits.wasm-encoder]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[wildcard-audits.wasm-metadata]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
@@ -1966,6 +1979,19 @@ This is a Bytecode Alliance authored crate maintained in the `wasm-tools`
 repository of which I'm one of the primary maintainers and publishers for.
 I am employed by a member of the Bytecode Alliance and plan to continue doing
 so and will actively maintain this crate over time.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[wildcard-audits.wasm-metadata]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
@@ -2019,6 +2045,19 @@ so and will actively maintain this crate over time.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[wildcard-audits.wasmparser]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[wildcard-audits.wasmprinter]]
 who = "Nick Fitzgerald <fitzgen@gmail.com>"
 criteria = "safe-to-deploy"
@@ -2038,6 +2077,19 @@ This is a Bytecode Alliance authored crate maintained in the `wasm-tools`
 repository of which I'm one of the primary maintainers and publishers for.
 I am employed by a member of the Bytecode Alliance and plan to continue doing
 so and will actively maintain this crate over time.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[wildcard-audits.wasmprinter]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
@@ -2203,6 +2255,19 @@ end = "2024-06-26"
 notes = "The Bytecode Alliance is the author of this crate."
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[wildcard-audits.wasmtime-slab]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[wildcard-audits.wasmtime-types]]
 who = "Bobby Holley <bobbyholley@gmail.com>"
 criteria = "safe-to-deploy"
@@ -2307,6 +2372,19 @@ so and will actively maintain this crate over time.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[wildcard-audits.wast]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[wildcard-audits.wat]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
@@ -2318,6 +2396,19 @@ This is a Bytecode Alliance authored crate maintained in the `wasm-tools`
 repository of which I'm one of the primary maintainers and publishers for.
 I am employed by a member of the Bytecode Alliance and plan to continue doing
 so and will actively maintain this crate over time.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[wildcard-audits.wat]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
@@ -2404,7 +2495,60 @@ so and will actively maintain this crate over time.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[wildcard-audits.wit-bindgen]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[wildcard-audits.wit-bindgen-core]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 1
+start = "2020-12-11"
+end = "2024-04-14"
+notes = """
+This is a Bytecode Alliance authored crate maintained in the `wit-bindgen`
+repository of which I'm one of the primary maintainers and publishers for.
+I am employed by a member of the Bytecode Alliance and plan to continue doing
+so and will actively maintain this crate over time.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[wildcard-audits.wit-bindgen-core]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[wildcard-audits.wit-bindgen-rt]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[wildcard-audits.wit-bindgen-rust]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
 user-id = 1
@@ -2421,14 +2565,13 @@ aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/m
 [[wildcard-audits.wit-bindgen-rust]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
-user-id = 1
-start = "2020-12-11"
-end = "2024-04-14"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
 notes = """
-This is a Bytecode Alliance authored crate maintained in the `wit-bindgen`
-repository of which I'm one of the primary maintainers and publishers for.
-I am employed by a member of the Bytecode Alliance and plan to continue doing
-so and will actively maintain this crate over time.
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
@@ -2460,6 +2603,19 @@ so and will actively maintain this crate over time.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[wildcard-audits.wit-bindgen-rust-macro]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[wildcard-audits.wit-component]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
@@ -2482,6 +2638,19 @@ start = "2019-03-16"
 end = "2024-03-10"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[wildcard-audits.wit-component]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
 [[wildcard-audits.wit-parser]]
 who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
@@ -2493,6 +2662,19 @@ This is a Bytecode Alliance authored crate maintained in the `wasm-tools`
 repository of which I'm one of the primary maintainers and publishers for.
 I am employed by a member of the Bytecode Alliance and plan to continue doing
 so and will actively maintain this crate over time.
+"""
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[wildcard-audits.wit-parser]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+user-id = 73222
+start = "2023-01-01"
+end = "2025-05-08"
+notes = """
+The Bytecode Alliance uses the `wasmtime-publish` crates.io account to automate
+publication of this crate from CI. This repository requires all PRs are reviewed
+by a Bytecode Alliance maintainer and it owned by the Bytecode Alliance itself.
 """
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
@@ -3100,6 +3282,15 @@ aggregated-from = [
 ]
 
 [[audits.anstyle]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.6 -> 1.0.7"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.anstyle]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "1.0.0"
@@ -3291,6 +3482,16 @@ aggregated-from = [
 ]
 
 [[audits.anyhow]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.82 -> 1.0.83"
+notes = "No change to UB-risk profile either."
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.anyhow]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "1.0.57 -> 1.0.61"
@@ -3334,6 +3535,15 @@ delta = "1.0.68 -> 1.0.69"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.anyhow]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.0.82 -> 1.0.83"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.anyhow]]
@@ -3715,6 +3925,22 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.ash]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.37.3+1.3.251 -> 0.38.0+1.3.281"
+notes = """
+There are many sweeping changes to code generation that make this review intimidating, at first.
+However, I have audited all hand-written code, and vetted changes to the code generator (with some
+auditing of generated output to ensure correspondence to my mental model). Vulkan is an inherently
+unsafe API, but this crate makes many of the preparatory steps for calling Vulkan APIs safer and
+easier to use.
+"""
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.ashmem]]
 who = "Matthew Gregan <kinetik@flim.org>"
 criteria = "safe-to-deploy"
@@ -4045,6 +4271,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.async-trait]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.1.78 -> 0.1.80"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.atomic-polyfill]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4205,6 +4440,15 @@ notes = "All code written or reviewed by Josh Stone."
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.autocfg]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.2.0 -> 1.3.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.autometrics]]
@@ -5232,6 +5476,15 @@ aggregated-from = [
 ]
 
 [[audits.bytemuck]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.15.0 -> 1.16.0"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.bytemuck]]
 who = [
     "Manish Goregaokar <manishearth@google.com>",
     "Łukasz Anforowicz <lukasza@google.com>",
@@ -5242,6 +5495,15 @@ notes = "Reviewed in CL 561111794"
 aggregated-from = [
     "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.bytemuck]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "1.15.0 -> 1.16.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.bytemuck_derive]]
@@ -5793,6 +6055,15 @@ aggregated-from = [
 [[audits.cc]]
 who = "Daira-Emma Hopwood <daira@jacaranda.org>"
 criteria = "safe-to-deploy"
+delta = "1.0.94 -> 1.0.97"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.cc]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
 delta = "1.0.83 -> 1.0.94"
 notes = """
 The optimization to use `buffer.set_len(buffer.capacity())` in `command_helpers::StderrForwarder::forward_available`
@@ -6048,6 +6319,15 @@ criteria = "safe-to-deploy"
 version = "0.2.0"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[audits.ciborium]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.2.1 -> 0.2.2"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.ciborium-io]]
 who = "Pat Hickey <phickey@fastly.com>"
 criteria = "safe-to-deploy"
@@ -6060,11 +6340,29 @@ criteria = "safe-to-run"
 version = "0.2.0"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
+[[audits.ciborium-io]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.2.1 -> 0.2.2"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.ciborium-ll]]
 who = "Pat Hickey <phickey@fastly.com>"
 criteria = "safe-to-deploy"
 version = "0.2.0"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.ciborium-ll]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.2.1 -> 0.2.2"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
 
 [[audits.cipher]]
 who = "Daira Hopwood <daira@jacaranda.org>"
@@ -6133,6 +6431,20 @@ aggregated-from = [
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "1.4.0 -> 1.6.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.clang-sys]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.6.0 -> 1.7.0"
+notes = """
+Adds several new symbols for Clang versions 11.0, 12.0, 16.0, and 17.0, conditionally enabled based
+on Cargo feature flags. Some other minor internal refactors were implemented that shouldn't change
+functionality otherwise.
+"""
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -6286,6 +6598,15 @@ who = "Brandon Pitman <bran@bran.land>"
 criteria = "safe-to-run"
 delta = "4.1.14 -> 4.3.0"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.clap-verbosity-flag]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-run"
+version = "2.2.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
 
 [[audits.clap_builder]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -8046,6 +8367,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.cubeb]]
+who = "Andreas Pehrson <apehrson@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.12.0 -> 0.13.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.cubeb-backend]]
 who = "Matthew Gregan <kinetik@flim.org>"
 criteria = "safe-to-deploy"
@@ -8092,6 +8422,15 @@ aggregated-from = [
 who = "Andreas Pehrson <apehrson@mozilla.com>"
 criteria = "safe-to-deploy"
 delta = "0.10.7 -> 0.12.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.cubeb-backend]]
+who = "Andreas Pehrson <apehrson@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.12.0 -> 0.13.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -8157,6 +8496,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.cubeb-core]]
+who = "Andreas Pehrson <apehrson@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.12.0 -> 0.13.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.cubeb-sys]]
 who = "Matthew Gregan <kinetik@flim.org>"
 criteria = "safe-to-deploy"
@@ -8203,6 +8551,15 @@ aggregated-from = [
 who = "Andreas Pehrson <apehrson@mozilla.com>"
 criteria = "safe-to-deploy"
 delta = "0.10.7 -> 0.12.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.cubeb-sys]]
+who = "Andreas Pehrson <apehrson@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.12.0 -> 0.13.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -8356,19 +8713,6 @@ aggregated-from = [
 [[audits.cxx]]
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
 criteria = "does-not-implement-crypto"
-version = "1.0.116"
-notes = """
-Grepped for \"crypt\", \"cipher\" - there were no hits
-(except for benign hits in `MODULE.bazel.lock`)
-"""
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.cxx]]
-who = "Lukasz Anforowicz <lukasza@chromium.org>"
-criteria = "does-not-implement-crypto"
 version = "1.0.117"
 notes = """
 Grepped for \"crypt\", \"cipher\" - there were no hits
@@ -8380,12 +8724,11 @@ aggregated-from = [
 ]
 
 [[audits.cxx]]
-who = "Lukasz Anforowicz <lukasza@chromium.org>"
+who = "danakj <danakj@chromium.org>"
 criteria = "does-not-implement-crypto"
-delta = "1.0.110 -> 1.0.115"
+version = "1.0.122"
 notes = """
-Grepped for \"crypt\", \"cipher\" - there were no hits
-(except for benign hits in `MODULE.bazel.lock`)
+safe-to-deploy and ub-risk-2 are provided by exemption.
 """
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
@@ -8394,7 +8737,7 @@ aggregated-from = [
 
 [[audits.cxx]]
 who = "danakj <danakj@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+criteria = "does-not-implement-crypto"
 delta = "1.0.117 -> 1.0.119"
 notes = "Reviewed in https://crrev.com/c/5362739"
 aggregated-from = [
@@ -8404,7 +8747,7 @@ aggregated-from = [
 
 [[audits.cxx]]
 who = "Dustin J. Mitchell <djmitche@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+criteria = "does-not-implement-crypto"
 delta = "1.0.119 -> 1.0.120"
 notes = "Reviewed in https://chromium-review.googlesource.com/c/chromium/src/+/5392544."
 aggregated-from = [
@@ -8414,7 +8757,7 @@ aggregated-from = [
 
 [[audits.cxx]]
 who = "Adrian Taylor <adetaylor@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+criteria = "does-not-implement-crypto"
 delta = "1.0.120 -> 1.0.121"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
@@ -8545,6 +8888,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[audits.cxx]]
+who = "Jack Grigg <jack@electriccoin.co>"
+criteria = "safe-to-deploy"
+delta = "1.0.113 -> 1.0.122"
+notes = "Build script changes only affect lints."
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.cxx-build]]
 who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -8656,6 +9009,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.cxxbridge-cmd]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.121 -> 1.0.122"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.cxxbridge-flags]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -8725,63 +9087,10 @@ aggregated-from = [
 ]
 
 [[audits.cxxbridge-flags]]
-who = "Lukasz Anforowicz <lukasza@chromium.org>"
-criteria = "does-not-implement-crypto"
-version = "1.0.116"
-notes = 'Grepped for \"crypt\", \"cipher\" - there were no hits'
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.cxxbridge-flags]]
-who = "Lukasz Anforowicz <lukasza@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
-version = "1.0.117"
-notes = """
-I grepped for \"crypt\", \"cipher\", \"fs\", \"net\", \"unsafe\" - there were no hits.
-The crate is very straightforward - it just defines a `pub const STD: &str`.
-The crate was added to Chromium in https://crrev.com/c/5029701.
-"""
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.cxxbridge-flags]]
-who = "Lukasz Anforowicz <lukasza@chromium.org>"
-criteria = "does-not-implement-crypto"
-delta = "1.0.110 -> 1.0.115"
-notes = 'Grepped for \"crypt\", \"cipher\" - there were no hits'
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.cxxbridge-flags]]
 who = "danakj <danakj@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "1.0.117 -> 1.0.119"
-notes = "Reviewed in https://crrev.com/c/5362739"
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.cxxbridge-flags]]
-who = "Dustin J. Mitchell <djmitche@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "1.0.119 -> 1.0.120"
-notes = "Reviewed in https://chromium-review.googlesource.com/c/chromium/src/+/5392544"
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.cxxbridge-flags]]
-who = "Adrian Taylor <adetaylor@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
-delta = "1.0.120 -> 1.0.121"
+version = "1.0.122"
+notes = "no grep hits for cipher, crypto, fs, net, or unsafe"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -8896,6 +9205,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[audits.cxxbridge-flags]]
+who = "Jack Grigg <jack@electriccoin.co>"
+criteria = "safe-to-deploy"
+delta = "1.0.121 -> 1.0.122"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.cxxbridge-macro]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -8952,28 +9270,13 @@ aggregated-from = [
 
 [[audits.cxxbridge-macro]]
 who = "danakj <danakj@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "1.0.117 -> 1.0.119"
-notes = "Reviewed in https://crrev.com/c/5362739"
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
+criteria = "does-not-implement-crypto"
+version = "1.0.122"
+notes = """
+no grep hits for cipher, crypto.
 
-[[audits.cxxbridge-macro]]
-who = "Dustin J. Mitchell <djmitche@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "1.0.119 -> 1.0.120"
-notes = "Reviewed in https://chromium-review.googlesource.com/c/chromium/src/+/5392544"
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.cxxbridge-macro]]
-who = "Adrian Taylor <adetaylor@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "1.0.120 -> 1.0.121"
+safe-to-deploy and ub-risk-2 are provided by exemption.
+"""
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -9104,6 +9407,16 @@ aggregated-from = [
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "1.0.111 -> 1.0.113"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.cxxbridge-macro]]
+who = "Jack Grigg <jack@electriccoin.co>"
+criteria = "safe-to-deploy"
+delta = "1.0.113 -> 1.0.122"
+notes = "Only changes to lints."
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
@@ -10492,6 +10805,15 @@ aggregated-from = [
 ]
 
 [[audits.errno]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.3.8 -> 0.3.9"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.errno]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "0.3.1 -> 0.3.3"
@@ -10783,6 +11105,24 @@ aggregated-from = [
 ]
 
 [[audits.fastrand]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "2.0.2 -> 2.1.0"
+notes = """
+As noted in the changelog, this version produces different output for a given seed.
+The documentation did not mention stability. It is possible that some uses relying on
+determinism across the update would be broken.
+
+The new constants do appear to match WyRand v4.2 (modulo ordering issues that I have not checked):
+https://github.com/wangyi-fudan/wyhash/blob/408620b6d12b7d667b3dd6ae39b7929a39e8fa05/wyhash.h#L145
+I have no way to check whether these constants are an improvement or not.
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.fastrand]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "1.9.0 -> 2.0.0"
@@ -10905,6 +11245,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.fend-core]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "1.4.6 -> 1.4.8"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.ff]]
 who = "Jack Grigg <jack@z.cash>"
 criteria = "safe-to-deploy"
@@ -11007,6 +11356,13 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-deploy"
 delta = "0.2.7 -> 0.2.8"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[audits.fiat-crypto]]
+who = "Tim Geoghegan <timg@divviup.org>"
+criteria = "safe-to-deploy"
+delta = "0.2.8 -> 0.2.9"
+notes = "No changes to Rust code between 0.2.8 and 0.2.9"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.file-per-thread-logger]]
@@ -11225,7 +11581,7 @@ aggregated-from = [
 [[audits.flate2]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
-delta = "1.0.27 -> 1.0.28"
+version = "1.0.28"
 notes = """
 Reviewed in CL 573223148
 Issues from previous review (#379, #220) fixed (PRs #380, #373).
@@ -11423,6 +11779,15 @@ who = "danakj <danakj@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
 delta = "0.4.2 -> 0.4.3"
 notes = "Reviewed in https://crrev.com/c/5362378. No new use of unsafe."
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.font-types]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "0.5.2 -> 0.5.3"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -12135,6 +12500,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.futures-macro]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.3.29 -> 0.3.30"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.futures-retry-policies]]
 who = "Conrad Ludgate <conradludgate@gmail.com>"
 criteria = "safe-to-deploy"
@@ -12208,6 +12582,15 @@ delta = "0.3.27 -> 0.3.28"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.futures-sink]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.3.29 -> 0.3.30"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.futures-task]]
@@ -12606,6 +12989,15 @@ aggregated-from = [
 who = "Adrian Taylor <adetaylor@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.2.12 -> 0.2.14"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.getrandom]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.14 -> 0.2.15"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -13211,6 +13603,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.gpu-allocator]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.25.0 -> 0.26.0"
+notes = "New Metal backend is written with no `unsafe`. New `unsafe` usage of DX12's platform APIs appear correct and safe. Otherwise, minimal changes."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.gpu-descriptor]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
@@ -13447,6 +13849,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.h2]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.3.21 -> 0.3.26"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.half]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
@@ -13495,6 +13906,19 @@ capabilities.
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.half]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "1.8.2 -> 2.2.1"
+notes = """
+All new uses of unsafe are either just accessing bit representations, or plausibly reasonable uses of intrinsics. I have not checked safety
+requirements on the latter.
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.hashbag]]
@@ -13547,6 +13971,16 @@ aggregated-from = [
 ]
 
 [[audits.hashbrown]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.14.2 -> 0.14.5"
+notes = "I did not thoroughly check the safety argument for fold_impl, but it at least seems to be well documented."
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.hashbrown]]
 who = "Daira Emma Hopwood <daira@jacaranda.org>"
 criteria = "safe-to-deploy"
 delta = "0.13.2 -> 0.14.0"
@@ -13574,6 +14008,16 @@ who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "0.8.1 -> 0.8.2"
 notes = "Only dependency changes."
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.hashlink]]
+who = "Mark Hammond <mhammond@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.8.1 -> 0.9.1"
+notes = "New CursorMut struct and other relatively straight-forward changes."
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -13632,6 +14076,13 @@ who = "Alex Crichton <alex@alexcrichton.com>"
 criteria = "safe-to-deploy"
 version = "0.4.0"
 notes = "Contains `forbid_unsafe` and only uses `std::fmt` from the standard library. Otherwise only contains string manipulation."
+aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[audits.heck]]
+who = "Alex Crichton <alex@alexcrichton.com>"
+criteria = "safe-to-deploy"
+delta = "0.4.1 -> 0.5.0"
+notes = "Minor changes for a `no_std` upgrade but otherwise everything looks as expected."
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[audits.heck]]
@@ -14729,6 +15180,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.inferno]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.11.17 -> 0.11.19"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.inflections]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -15108,6 +15568,15 @@ delta = "0.4.2 -> 0.4.9"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.is-terminal]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.4.9 -> 0.4.12"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.is-terminal]]
@@ -15500,6 +15969,15 @@ delta = "0.1.24 -> 0.1.25"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.js-sys]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.3.65 -> 0.3.66"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.js-sys]]
@@ -15939,6 +16417,16 @@ aggregated-from = [
 ]
 
 [[audits.libc]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto", "ub-risk-4"]
+delta = "0.2.153 -> 0.2.154"
+notes = "No change to unsafe risk profile here."
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.libc]]
 who = "David Koloski <dkoloski@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
 delta = "0.2.142 -> 0.2.149"
@@ -16263,6 +16751,15 @@ aggregated-from = [
 who = "Mark Hammond <mhammond@mozilla.com>"
 criteria = "safe-to-deploy"
 delta = "0.26.0 -> 0.27.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.libsqlite3-sys]]
+who = "Mark Hammond <mhammond@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.27.0 -> 0.28.0"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -16599,6 +17096,15 @@ delta = "0.4.7 -> 0.4.9"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.lock_api]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.4.11 -> 0.4.12"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.lock_api]]
@@ -17630,6 +18136,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[audits.minreq]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "2.11.0 -> 2.11.2"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.minspan]]
 who = "Conrad Ludgate <conradludgate@gmail.com>"
 criteria = "safe-to-deploy"
@@ -18390,6 +18905,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.num-bigint]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.4.4 -> 0.4.5"
+notes = "New uses of unsafe look reasonable."
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.num-bigint-dig]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
@@ -18469,6 +18994,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.num-derive]]
+who = "Mike Hommey <mh+mozilla@glandium.org>"
+criteria = "safe-to-deploy"
+delta = "0.4.0 -> 0.4.2"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.num-integer]]
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-deploy"
@@ -18535,6 +19069,12 @@ aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
+
+[[audits.num-rational]]
+who = "Brandon Pitman <bran@bran.land>"
+criteria = "safe-to-deploy"
+delta = "0.4.1 -> 0.4.2"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.num-rational]]
 who = "Josh Stone <jistone@redhat.com>"
@@ -19489,6 +20029,15 @@ aggregated-from = [
 ]
 
 [[audits.parking_lot]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.12.1 -> 0.12.2"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.parking_lot]]
 who = "Jack Grigg <jack@z.cash>"
 criteria = "safe-to-deploy"
 delta = "0.11.2 -> 0.12.1"
@@ -19514,6 +20063,15 @@ delta = "0.8.5 -> 0.8.6"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.parking_lot_core]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.9.9 -> 0.9.10"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.parking_lot_core]]
@@ -20009,6 +20567,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.pin-project-internal]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.1.3 -> 1.1.5"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.pin-project-lite]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -20172,6 +20739,15 @@ delta = "0.3.25 -> 0.3.26"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.pkg-config]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.3.29 -> 0.3.30"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.pkg-config]]
@@ -20434,6 +21010,15 @@ version = "0.1.25"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.prettyplease]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.2.15 -> 0.2.20"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.primal-check]]
@@ -20725,6 +21310,15 @@ aggregated-from = [
 ]
 
 [[audits.proc-macro2]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.81 -> 1.0.82"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.proc-macro2]]
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-deploy"
 delta = "1.0.49 -> 1.0.47"
@@ -20814,6 +21408,15 @@ notes = "Removed special support for some really old Rust versions"
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.proc-macro2]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.0.81 -> 1.0.82"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.proc-macro2]]
@@ -20966,6 +21569,15 @@ aggregated-from = [
 ]
 
 [[audits.proptest]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.3.1 -> 1.4.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.proptest]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "1.2.0 -> 1.4.0"
@@ -21025,6 +21637,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.prost]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.12.1 -> 0.12.3"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.prost-build]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -21032,6 +21653,15 @@ version = "0.11.1"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.prost-build]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.12.1 -> 0.12.3"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.prost-derive]]
@@ -21053,9 +21683,9 @@ aggregated-from = [
 ]
 
 [[audits.prost-derive]]
-who = "Adrian Taylor <adetaylor@chromium.org>"
-criteria = ["safe-to-run", "does-not-implement-crypto"]
-delta = "0.12.3 -> 0.12.4"
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.12.3 -> 0.12.5"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -21090,6 +21720,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.prost-derive]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.12.1 -> 0.12.3"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.prost-types]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -21097,6 +21736,15 @@ version = "0.11.1"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.prost-types]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.12.1 -> 0.12.3"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.protobuf]]
@@ -21366,6 +22014,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.qlog]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.12.0 -> 0.13.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.qr_code]]
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
@@ -21417,6 +22074,15 @@ criteria = "safe-to-deploy"
 version = "1.0.0"
 notes = "Proc macro. No unsafe usage or ambient capabilities"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
+
+[[audits.quinn-udp]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-run"
+version = "0.5.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
 
 [[audits.quote]]
 who = "Pat Hickey <phickey@fastly.com>"
@@ -21709,6 +22375,19 @@ criteria = "safe-to-run"
 version = "0.3.1"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.rand_chacha]]
+who = "Allen Webb <allenwebb@google.com>"
+criteria = "crypto-safe"
+version = "0.3.1"
+notes = """
+This crate doesn't actually implement ChaCha, it uses the implementation in
+`c2-chacha`.  Note that this review has been internally tracked in b/330501364.
+"""
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
@@ -22051,6 +22730,15 @@ aggregated-from = [
 ]
 
 [[audits.read-fonts]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.19.0 -> 0.19.1"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.read-fonts]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-1"
 version = "0.15.6"
@@ -22125,6 +22813,16 @@ delta = "0.2.16 -> 0.3.5"
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.redox_syscall]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.4.1 -> 0.5.1"
+notes = "Uses of unsafe look plausible."
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.redox_users]]
@@ -22774,6 +23472,16 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.rusqlite]]
+who = "Mark Hammond <mhammond@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.30.0 -> 0.31.0"
+notes = "Mostly build and dependency related changes, and bump to sqlite version"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.rust_cascade]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
@@ -22847,6 +23555,24 @@ Previously reviewed during security review and the audit is grandparented in.
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.rustc-demangle]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.1.23 -> 0.1.24"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.rustc-demangle]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.1.23 -> 0.1.24"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.rustc-demangle]]
@@ -23115,6 +23841,51 @@ criteria = "safe-to-deploy"
 delta = "0.21.0 -> 0.21.6"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[audits.rustls]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.21.8 -> 0.21.12"
+notes = """
+A comment in get_sni_extension asks whether the behaviour of parsing an IPv4 or IPv6 address
+in a host_name field of a server_name extension, but then ignoring the extension (because
+'Literal IPv4 and IPv6 addresses are not permitted in \"HostName\"'), as the server, is
+compliant with RFC 6066. As an original author of RFC 3546 which has very similar wording,
+I can speak to the intent: yes this is fine. The client is clearly nonconformant in this
+case, but the server isn't.
+
+RFC 3546 said \"If the server understood the client hello extension but does not recognize
+the server name, it SHOULD send an \"unrecognized_name\" alert (which MAY be fatal).\"
+This wording was preserved in RFC 5746, and then updated in RFC 6066 to:
+
+   If the server understood the ClientHello extension but
+   does not recognize the server name, the server SHOULD take one of two
+   actions: either abort the handshake by sending a fatal-level
+   unrecognized_name(112) alert or continue the handshake.  It is NOT
+   RECOMMENDED to send a warning-level unrecognized_name(112) alert,
+   because the client's behavior in response to warning-level alerts is
+   unpredictable.  If there is a mismatch between the server name used
+   by the client application and the server name of the credential
+   chosen by the server, this mismatch will become apparent when the
+   client application performs the server endpoint identification, at
+   which point the client application will have to decide whether to
+   proceed with the communication.
+
+To me it's clear that it is reasonable to consider an IP address as a name that the
+server does not recognize. And so the server SHOULD *either* send a fatal unrecognized_name
+alert, *or* continue the handshake and let the client application decide when it \"performs
+the server endpoint identification\". There's no conformance requirement for the server to
+take any notice of a host_name that is \"not permitted\". (It would have been clearer to
+express this by specifying the allowed client and server behaviour separately, i.e. saying
+that the client MUST NOT send an IP address in host_name, and then explicitly specifying
+the server behaviour if it does so anyway. That's how I would write it now. But honestly
+this extension was one of the most bikeshedded parts of RFC 3546, to a much greater extent
+than I'd anticipated, and I was tired.)
+"""
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.rustls-pemfile]]
 who = "Conrad Ludgate <conradludgate@gmail.com>"
 criteria = "safe-to-deploy"
@@ -23175,6 +23946,15 @@ aggregated-from = [
 ]
 
 [[audits.rustversion]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "1.0.15 -> 1.0.16"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.rustversion]]
 who = "Bobby Holley <bobbyholley@gmail.com>"
 criteria = "safe-to-deploy"
 version = "1.0.9"
@@ -23206,6 +23986,24 @@ notes = "Doc updates, minimal CI changes and a fix to build-script reruns"
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.rustversion]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.0.15 -> 1.0.16"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.rustversion]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.0.16 -> 1.0.17"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.rustversion]]
@@ -23291,6 +24089,15 @@ delta = "1.0.11 -> 1.0.12"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.ryu]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "1.0.17 -> 1.0.18"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.ryu]]
@@ -23585,6 +24392,15 @@ aggregated-from = [
 ]
 
 [[audits.semver]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.22 -> 1.0.23"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.semver]]
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "1.0.9 -> 1.0.10"
@@ -23723,6 +24539,15 @@ aggregated-from = [
 ]
 
 [[audits.serde]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.198 -> 1.0.201"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.serde]]
 who = "David Cook <dcook@divviup.org>"
 criteria = "safe-to-deploy"
 delta = "1.0.152 -> 1.0.153"
@@ -23795,6 +24620,15 @@ aggregated-from = [
 ]
 
 [[audits.serde]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.0.198 -> 1.0.201"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.serde]]
 who = "Jan-Erik Rediger <jrediger@mozilla.com>"
 criteria = "safe-to-deploy"
 delta = "1.0.150 -> 1.0.160"
@@ -23812,6 +24646,15 @@ notes = "Internal refactorings and some new trait implementations"
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.serde]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.0.201 -> 1.0.202"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.serde]]
@@ -23992,9 +24835,9 @@ aggregated-from = [
 ]
 
 [[audits.serde_derive]]
-who = "Dustin J. Mitchell <djmitche@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "1.0.197 -> 1.0.198"
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "1.0.197 -> 1.0.201"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -24073,6 +24916,15 @@ aggregated-from = [
 ]
 
 [[audits.serde_derive]]
+who = "Erich Gubler <erichdongubler@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.0.198 -> 1.0.201"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.serde_derive]]
 who = "Jan-Erik Rediger <jrediger@mozilla.com>"
 criteria = "safe-to-deploy"
 delta = "1.0.150 -> 1.0.160"
@@ -24090,6 +24942,15 @@ notes = "Internal refactorings and dependency updates"
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.serde_derive]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.0.201 -> 1.0.202"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.serde_derive]]
@@ -24263,6 +25124,15 @@ aggregated-from = [
 ]
 
 [[audits.serde_json]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.116 -> 1.0.117"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.serde_json]]
 who = "Tim Geoghegan <timg@letsencrypt.org>"
 criteria = "safe-to-deploy"
 delta = "1.0.91 -> 1.0.92"
@@ -24321,6 +25191,15 @@ delta = "1.0.91 -> 1.0.93"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.serde_json]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "1.0.116 -> 1.0.117"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.serde_json]]
@@ -25085,6 +25964,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.smallvec]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.11.1 -> 1.13.2"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.smart-default]]
 who = "Gabriele Svelto <gsvelto@mozilla.com>"
 criteria = "safe-to-deploy"
@@ -25155,6 +26043,25 @@ delta = "0.4.4 -> 0.4.7"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.socket2]]
+who = "Kershaw Chang <kershaw@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.5.5 -> 0.5.7"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.socket2]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.5.6 -> 0.5.7"
+notes = "The new uses of unsafe to access getsockopt/setsockopt look reasonable."
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.socket2]]
@@ -25316,6 +26223,12 @@ who = "Conrad Ludgate <conradludgate@gmail.com>"
 criteria = "safe-to-deploy"
 version = "1.1.0"
 aggregated-from = "https://raw.githubusercontent.com/atuinsh/atuin/vetting/supply-chain/audits.toml"
+
+[[audits.statrs]]
+who = "David Cook <dcook@divviup.org>"
+criteria = "safe-to-run"
+delta = "0.16.0 -> 0.16.1"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
 
 [[audits.std_prelude]]
 who = "Johan Andersson <opensource@embark-studios.com>"
@@ -25658,43 +26571,6 @@ aggregated-from = [
 ]
 
 [[audits.syn]]
-who = "Adrian Taylor <adetaylor@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "2.0.52 -> 2.0.53"
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.syn]]
-who = "Dustin J. Mitchell <djmitche@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "2.0.53 -> 2.0.55"
-notes = "Mostly clippy, test changes - no changed unsafe."
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.syn]]
-who = "Adrian Taylor <adetaylor@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "2.0.55 -> 2.0.59"
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.syn]]
-who = "Dustin J. Mitchell <djmitche@chromium.org>"
-criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
-delta = "2.0.59 -> 2.0.60"
-aggregated-from = [
-    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
-    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
-]
-
-[[audits.syn]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "2.0.29"
@@ -25736,6 +26612,15 @@ notes = "Dependency update & internal refactorings"
 aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/glean/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.syn]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "2.0.60 -> 2.0.63"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.syn]]
@@ -25907,6 +26792,15 @@ aggregated-from = [
 who = "Mike Hommey <mh+mozilla@glandium.org>"
 criteria = "safe-to-deploy"
 delta = "0.12.6 -> 0.13.0"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.synstructure]]
+who = "Mike Hommey <mh+mozilla@glandium.org>"
+criteria = "safe-to-deploy"
+delta = "0.13.0 -> 0.13.1"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -26199,6 +27093,15 @@ criteria = "safe-to-deploy"
 version = "0.2.11"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
+[[audits.testing_logger]]
+who = "Christoph Schlosser <cschlosser@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
 [[audits.textwrap]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -26384,6 +27287,15 @@ aggregated-from = [
 ]
 
 [[audits.thiserror]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.0.58 -> 1.0.60"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.thiserror]]
 who = "Jack Grigg <jack@z.cash>"
 criteria = "safe-to-deploy"
 delta = "1.0.30 -> 1.0.32"
@@ -26528,6 +27440,15 @@ delta = "1.0.32 -> 1.0.38"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.thiserror-impl]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.0.58 -> 1.0.60"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.thiserror-impl]]
@@ -27230,6 +28151,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.tokio-stream]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.1.14 -> 0.1.15"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.tokio-util]]
 who = "Pat Hickey <phickey@fastly.com>"
 criteria = "safe-to-deploy"
@@ -27244,6 +28174,15 @@ version = "0.7.3"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.tokio-util]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.7.10 -> 0.7.11"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.toml]]
@@ -27375,6 +28314,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.tonic]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.10.2 -> 0.11.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.tonic-build]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -27382,6 +28330,15 @@ version = "0.8.2"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.tonic-build]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.10.2 -> 0.11.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.tonic-health]]
@@ -28352,6 +29309,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[audits.unic-langid]]
+who = "Eemeli Aro <eemeli@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.9.1 -> 0.9.5"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
 [[audits.unic-langid-impl]]
 who = "Zibi Braniecki <zibi@unicode.org>"
 criteria = "safe-to-deploy"
@@ -28365,6 +29331,15 @@ aggregated-from = [
 who = "Makoto Kato <m_kato@ga2.so-net.ne.jp>"
 criteria = "safe-to-deploy"
 delta = "0.9.0 -> 0.9.1"
+aggregated-from = [
+    "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.unic-langid-impl]]
+who = "Eemeli Aro <eemeli@mozilla.com>"
+criteria = "safe-to-deploy"
+delta = "0.9.1 -> 0.9.5"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -28721,6 +29696,15 @@ Reviewed in https://crrev.com/c/5171063
 
 Previously reviewed during security review and the audit is grandparented in.
 """
+aggregated-from = [
+    "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.unicode-width]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.1.11 -> 0.1.12"
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -29125,6 +30109,15 @@ aggregated-from = [
 who = "Howard Yang <hcyang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.1"
+aggregated-from = [
+    "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
+    "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.uninit]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.2"
 aggregated-from = [
     "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
@@ -29716,6 +30709,15 @@ aggregated-from = [
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
 ]
 
+[[audits.walkdir]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "2.4.0 -> 2.5.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[audits.want]]
 who = "Pat Hickey <phickey@fastly.com>"
 criteria = "safe-to-deploy"
@@ -29793,9 +30795,27 @@ aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/m
 [[audits.wasm-bindgen-backend]]
 who = "Daira-Emma Hopwood <daira@jacaranda.org>"
 criteria = "safe-to-deploy"
+delta = "0.2.88 -> 0.2.89"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.wasm-bindgen-backend]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
 delta = "0.2.89 -> 0.2.92"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.wasm-bindgen-macro]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.2.88 -> 0.2.89"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
@@ -30805,6 +31825,15 @@ aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/m
 [[audits.web-sys]]
 who = "Daira-Emma Hopwood <daira@jacaranda.org>"
 criteria = "safe-to-deploy"
+delta = "0.3.65 -> 0.3.66"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.web-sys]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
 delta = "0.3.66 -> 0.3.69"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
@@ -30829,6 +31858,16 @@ criteria = "safe-to-deploy"
 version = "0.22.4"
 notes = "Inspected it to confirm that it only contains data definitions and no runtime code"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
+
+[[audits.webpki-roots]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.25.2 -> 0.25.4"
+notes = "I have not checked consistency with the Mozilla IncludedCACertificateReportPEMCSV report."
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
 
 [[audits.webpki-roots]]
 who = "Conrad Ludgate <conradludgate@gmail.com>"
@@ -31261,6 +32300,15 @@ Previously reviewed during security review and the audit is grandparented in.
 aggregated-from = [
     "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT",
     "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml",
+]
+
+[[audits.winapi-util]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-run"
+delta = "0.1.6 -> 0.1.8"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.windows-targets]]
@@ -31730,6 +32778,15 @@ aggregated-from = [
 ]
 
 [[audits.zerocopy]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.7.32 -> 0.7.34"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.zerocopy]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "0.7.31 -> 0.7.32"
@@ -31785,6 +32842,15 @@ aggregated-from = [
 ]
 
 [[audits.zerocopy-derive]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "0.7.32 -> 0.7.34"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[audits.zerocopy-derive]]
 who = "Jack Grigg <jack@electriccoin.co>"
 criteria = "safe-to-deploy"
 delta = "0.7.31 -> 0.7.32"
@@ -31820,6 +32886,15 @@ version = "0.1.3"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[audits.zeroize]]
+who = "Daira-Emma Hopwood <daira@jacaranda.org>"
+criteria = "safe-to-deploy"
+delta = "1.6.0 -> 1.7.0"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[audits.zeroize]]
@@ -32463,6 +33538,16 @@ aggregated-from = [
 criteria = "safe-to-deploy"
 user-id = 6289
 start = "2020-06-26"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.equihash]]
+criteria = "safe-to-deploy"
+user-id = 6289
+start = "2020-06-26"
 end = "2024-09-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
@@ -32501,6 +33586,16 @@ end = "2025-01-11"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[trusted.f4jumble]]
+criteria = ["safe-to-deploy", "crypto-reviewed"]
+user-id = 6289
+start = "2021-09-22"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[trusted.f4jumble]]
@@ -32572,6 +33667,16 @@ aggregated-from = [
 criteria = ["safe-to-deploy", "crypto-reviewed"]
 user-id = 1244
 start = "2022-05-10"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.halo2_gadgets]]
+criteria = ["safe-to-deploy", "crypto-reviewed"]
+user-id = 1244
+start = "2022-05-10"
 end = "2024-09-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
@@ -32582,9 +33687,29 @@ aggregated-from = [
 criteria = ["safe-to-deploy", "crypto-reviewed"]
 user-id = 199950
 start = "2023-02-24"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.halo2_legacy_pdqsort]]
+criteria = ["safe-to-deploy", "crypto-reviewed"]
+user-id = 199950
+start = "2023-02-24"
 end = "2024-09-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.halo2_proofs]]
+criteria = ["safe-to-deploy", "crypto-reviewed"]
+user-id = 1244
+start = "2022-05-10"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
@@ -32633,6 +33758,36 @@ end = "2024-04-25"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[trusted.incrementalmerkletree]]
+criteria = "safe-to-deploy"
+user-id = 6289
+start = "2021-12-17"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.incrementalmerkletree]]
+criteria = "safe-to-deploy"
+user-id = 1244
+start = "2021-06-24"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.incrementalmerkletree]]
+criteria = "safe-to-deploy"
+user-id = 169181
+start = "2023-02-28"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[trusted.incrementalmerkletree]]
@@ -32945,6 +34100,13 @@ aggregated-from = [
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
 
+[[trusted.num-bigint]]
+criteria = "safe-to-deploy"
+user-id = 539
+start = "2019-09-04"
+end = "2025-05-15"
+aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
 [[trusted.num-complex]]
 criteria = "safe-to-run"
 user-id = 539
@@ -32974,6 +34136,26 @@ end = "2024-04-25"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[trusted.orchard]]
+criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
+user-id = 6289
+start = "2021-01-07"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.orchard]]
+criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
+user-id = 1244
+start = "2022-10-19"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[trusted.orchard]]
@@ -33298,6 +34480,16 @@ aggregated-from = [
 ]
 
 [[trusted.sapling-crypto]]
+criteria = ["safe-to-deploy", "crypto-reviewed"]
+user-id = 6289
+start = "2024-01-26"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.sapling-crypto]]
 criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
 user-id = 6289
 start = "2024-01-26"
@@ -33349,7 +34541,7 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 criteria = "safe-to-deploy"
 user-id = 3618
 start = "2019-03-01"
-end = "2024-04-25"
+end = "2025-05-31"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -33383,7 +34575,7 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 criteria = "safe-to-deploy"
 user-id = 3618
 start = "2019-03-01"
-end = "2024-04-25"
+end = "2025-05-31"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -33438,6 +34630,16 @@ end = "2024-04-25"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
+]
+
+[[trusted.shardtree]]
+criteria = "safe-to-deploy"
+user-id = 169181
+start = "2022-12-15"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
 [[trusted.smallvec]]
@@ -33530,7 +34732,7 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 criteria = "safe-to-deploy"
 user-id = 3618
 start = "2019-10-09"
-end = "2024-04-25"
+end = "2025-05-31"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -33554,7 +34756,7 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 criteria = "safe-to-deploy"
 user-id = 3618
 start = "2019-10-09"
-end = "2024-04-25"
+end = "2025-05-31"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
@@ -33772,39 +34974,11 @@ aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/m
 criteria = "safe-to-deploy"
 user-id = 73222
 start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wasm-encoder]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
 end = "2025-03-11"
 aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
-
-[[trusted.wasm-metadata]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wasm-mutate]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wasm-smith]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[trusted.wasm-smith]]
 criteria = "safe-to-deploy"
@@ -33815,20 +34989,6 @@ aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
-
-[[trusted.wasmparser]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wasmprinter]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[trusted.wasmtime]]
 criteria = "safe-to-deploy"
@@ -33902,13 +35062,6 @@ end = "2024-05-26"
 notes = "Maintained by Bytecode Alliance that we (Embark) are part of and we trust their review & release process on https://github.com/bytecodealliance/wasmtime"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
 
-[[trusted.wasmtime-slab]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-03-20"
-end = "2025-04-02"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
 [[trusted.wasmtime-types]]
 criteria = "safe-to-deploy"
 user-id = 73222
@@ -33925,20 +35078,6 @@ end = "2024-05-26"
 notes = "Maintained by Bytecode Alliance that we (Embark) are part of and we trust their review & release process on https://github.com/bytecodealliance/wasmtime"
 aggregated-from = "https://raw.githubusercontent.com/EmbarkStudios/rust-ecosystem/main/audits.toml"
 
-[[trusted.wasmtime-wmemcheck]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2023-09-20"
-end = "2024-09-27"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wast]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
 [[trusted.wast]]
 criteria = "safe-to-deploy"
 user-id = 73222
@@ -33948,13 +35087,6 @@ aggregated-from = [
     "https://hg.mozilla.org/mozilla-central/raw-file/tip/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml",
 ]
-
-[[trusted.wat]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
 [[trusted.web-sys]]
 criteria = "safe-to-deploy"
@@ -34080,6 +35212,16 @@ aggregated-from = [
 criteria = "safe-to-deploy"
 user-id = 64539
 start = "2021-11-15"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.windows-sys]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2021-11-15"
 end = "2024-06-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
@@ -34111,6 +35253,16 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 criteria = "safe-to-deploy"
 user-id = 64539
 start = "2022-09-09"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.windows-targets]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2022-09-09"
 end = "2024-06-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
@@ -34130,6 +35282,16 @@ user-id = 64539
 start = "2022-09-01"
 end = "2024-06-20"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[trusted.windows_aarch64_gnullvm]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2022-09-01"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
 
 [[trusted.windows_aarch64_gnullvm]]
 criteria = "safe-to-deploy"
@@ -34159,6 +35321,16 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 criteria = "safe-to-deploy"
 user-id = 64539
 start = "2021-11-05"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.windows_aarch64_msvc]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2021-11-05"
 end = "2024-06-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
@@ -34183,9 +35355,29 @@ aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/sup
 criteria = "safe-to-deploy"
 user-id = 64539
 start = "2021-10-28"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.windows_i686_gnu]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2021-10-28"
 end = "2024-06-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.windows_i686_gnullvm]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2024-04-02"
+end = "2025-05-15"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
@@ -34202,6 +35394,16 @@ user-id = 64539
 start = "2021-10-27"
 end = "2024-06-20"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[trusted.windows_i686_msvc]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2021-10-27"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
 
 [[trusted.windows_i686_msvc]]
 criteria = "safe-to-deploy"
@@ -34226,6 +35428,16 @@ user-id = 64539
 start = "2021-10-28"
 end = "2024-06-20"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[trusted.windows_x86_64_gnu]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2021-10-28"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
 
 [[trusted.windows_x86_64_gnu]]
 criteria = "safe-to-deploy"
@@ -34250,6 +35462,16 @@ user-id = 64539
 start = "2022-09-01"
 end = "2024-06-20"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[trusted.windows_x86_64_gnullvm]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2022-09-01"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
 
 [[trusted.windows_x86_64_gnullvm]]
 criteria = "safe-to-deploy"
@@ -34274,6 +35496,16 @@ user-id = 64539
 start = "2021-10-27"
 end = "2024-06-20"
 aggregated-from = "https://raw.githubusercontent.com/divviup/libprio-rs/main/supply-chain/audits.toml"
+
+[[trusted.windows_x86_64_msvc]]
+criteria = "safe-to-deploy"
+user-id = 64539
+start = "2021-10-27"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
 
 [[trusted.windows_x86_64_msvc]]
 criteria = "safe-to-deploy"
@@ -34299,68 +35531,32 @@ start = "2019-08-20"
 end = "2024-07-14"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
 
-[[trusted.wit-bindgen]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-23"
-end = "2025-02-23"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wit-bindgen-core]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-23"
-end = "2025-02-23"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wit-bindgen-rt]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-03-04"
-end = "2025-03-11"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wit-bindgen-rust]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-23"
-end = "2025-02-23"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wit-bindgen-rust-macro]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-23"
-end = "2025-02-23"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wit-component]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wit-parser]]
-criteria = "safe-to-deploy"
-user-id = 696
-start = "2023-10-12"
-end = "2024-10-17"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
-[[trusted.wit-parser]]
-criteria = "safe-to-deploy"
-user-id = 73222
-start = "2024-02-15"
-end = "2025-02-16"
-aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
-
 [[trusted.witx]]
 criteria = "safe-to-deploy"
 user-id = 1
 start = "2021-06-22"
 end = "2025-02-22"
 aggregated-from = "https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/supply-chain/audits.toml"
+
+[[trusted.zcash_address]]
+criteria = "safe-to-deploy"
+user-id = 1244
+start = "2022-10-19"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_address]]
+criteria = "safe-to-deploy"
+user-id = 6289
+start = "2021-03-07"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
 
 [[trusted.zcash_address]]
 criteria = "safe-to-deploy"
@@ -34382,6 +35578,36 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[trusted.zcash_client_backend]]
+criteria = "safe-to-deploy"
+user-id = 169181
+start = "2024-03-25"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_client_sqlite]]
+criteria = "safe-to-deploy"
+user-id = 169181
+start = "2024-03-25"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_encoding]]
+criteria = "safe-to-deploy"
+user-id = 1244
+start = "2022-10-19"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[trusted.zcash_encoding]]
 criteria = "safe-to-deploy"
 user-id = 1244
@@ -34389,6 +35615,36 @@ start = "2022-10-19"
 end = "2024-09-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_extensions]]
+criteria = "safe-to-deploy"
+user-id = 6289
+start = "2020-04-24"
+end = "2025-04-23"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_history]]
+criteria = "safe-to-deploy"
+user-id = 1244
+start = "2020-03-04"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_history]]
+criteria = "safe-to-deploy"
+user-id = 6289
+start = "2024-03-01"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
@@ -34412,6 +35668,26 @@ aggregated-from = [
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
+[[trusted.zcash_keys]]
+criteria = "safe-to-deploy"
+user-id = 169181
+start = "2024-01-15"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_note_encryption]]
+criteria = ["safe-to-deploy", "crypto-reviewed"]
+user-id = 169181
+start = "2023-03-22"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
 [[trusted.zcash_note_encryption]]
 criteria = ["safe-to-deploy", "crypto-reviewed"]
 user-id = 169181
@@ -34419,6 +35695,26 @@ start = "2023-03-22"
 end = "2024-09-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_primitives]]
+criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
+user-id = 6289
+start = "2021-03-26"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_primitives]]
+criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
+user-id = 1244
+start = "2019-10-08"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
@@ -34446,9 +35742,29 @@ aggregated-from = [
 criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
 user-id = 6289
 start = "2021-03-26"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_proofs]]
+criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
+user-id = 6289
+start = "2021-03-26"
 end = "2024-09-21"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_protocol]]
+criteria = "safe-to-deploy"
+user-id = 169181
+start = "2024-01-27"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
 
@@ -34466,6 +35782,16 @@ aggregated-from = [
 criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
 user-id = 6289
 start = "2023-12-07"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zcash_spec]]
+criteria = ["safe-to-deploy", "crypto-reviewed", "license-reviewed"]
+user-id = 6289
+start = "2023-12-07"
 end = "2025-03-18"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
@@ -34476,8 +35802,28 @@ aggregated-from = [
 criteria = "safe-to-deploy"
 user-id = 6289
 start = "2023-12-06"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zip32]]
+criteria = "safe-to-deploy"
+user-id = 6289
+start = "2023-12-06"
 end = "2025-03-18"
 aggregated-from = [
     "https://raw.githubusercontent.com/zcash/zcash/master/qa/supply-chain/audits.toml",
+    "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
+]
+
+[[trusted.zip321]]
+criteria = "safe-to-deploy"
+user-id = 169181
+start = "2024-01-15"
+end = "2025-04-22"
+aggregated-from = [
+    "https://raw.githubusercontent.com/zcash/librustzcash/main/supply-chain/audits.toml",
     "https://raw.githubusercontent.com/zcash/rust-ecosystem/main/supply-chain/audits.toml",
 ]
