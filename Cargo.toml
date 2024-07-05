@@ -2,15 +2,6 @@
 name = "self-test"
 version = "0.1.0"
 edition = "2021"
-license = "MIT OR Apache-2.0"
 publish = false
 
-[target.x86_64-unknown-linux-gnu.dependencies]
-libudev-sys = "0.1.4"
-
-# fix minimal-versions
-[target.'cfg(any())'.dependencies]
-libc = "0.2.155"
-
-[target.'cfg(any())'.build-dependencies]
-pkg-config = "0.3.30"
+[dependencies]

@@ -12,11 +12,7 @@ jobs:
     runs-on: ${{ matrix.platform.os }}
     steps:
     - uses: actions/checkout@v4
-      with:
-        repository: Nullus157/.github
-        ref: ${{ github.workflow_sha }}
-        path: .nullus.github
-    - uses: ./.nullus.github/.github/actions/setup
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         target: ${{ matrix.platform.target }}
     - run: sudo apt update && sudo apt install -y gcc-multilib
