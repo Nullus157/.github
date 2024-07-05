@@ -4,10 +4,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        repository: Nullus157/.github
+        ref: ${{ github.workflow_sha }}
+        path: .nullus.github
+    - uses: ./.nullus.github/.github/actions/setup
       with:
         toolchain: nightly
         rustflags: -Zallow-features=
+        update: ${{ inputs.update }}
     - run: cargo doc --no-deps --workspace --all-features --locked
       env:
         RUSTDOCFLAGS: --cfg=docsrs -Dwarnings
